@@ -12,15 +12,23 @@ If you are interested in setting up a 3D Motion Capture System or just want to l
 [Getting Started Guide](gettingstarted.md). Here you'll find an overview of our workflow as well as tutorials to help you build a succesfull 3D traking pipeline with JARVIS.
 
 ## Why JARVIS?
-Image based markerlerss motion capture has become an essential data analysis tool in many fields of research, pinoeered largely by DeepLabCut several years ago.
+Markerlerss motion capture has become an essential data analysis tool in many fields of research, pioneered largely by DeepLabCut several years ago.
 While there have been significant improvements to those methods both in terms of capabilities and usability, those advances mainly tackle single image based
 2D tracking. Setting up a system for multi camera 3D motion capture on the other hand still remains very challenging and time consuming.\
-JARVIS tries to change that by introducing an easy to use toolchain that was developed with highly precise 3D Tracking as the sole goal, not just an afterthought.\
-Our System consists of three parts:\
-- The <span style="color:#63a31f">**Acquisition Tool**</span>. allows you to record synchronised videos from multiple views at hight FPS thanks to GPU accelerated online JPEG compression. If you use FLIR cameras you can get your system setup and running with just a handful of clicks.
-- The <span style="color:#63a31f">**Annotation Tool**</span> leverages the fact that you record with multiple cameras at once by projecting your annotations in a subset of those cameras to
-  the remaining ones, significantly reducing the ammount of tedious manual annotations needed. It also provides easy-to-use interfaces for calibrating your cameras
+JARVIS tries to change that by introducing an easy to use toolchain that was developed with highly precise 3D Tracking as the primary goal, not just an afterthought.\
+Our System consists of three parts:
+- The <span style="color:#63a31f">**Acquisition Tool**</span> allows you to record synchronized high resolution videos from multiple views at high frame rates thanks to GPU accelerated online JPEG compression. If you use one of our recommended cameras you can get your system setup and running with just a handful of clicks.
+- The <span style="color:#63a31f">**Annotation Tool**</span> leverages the multi camera recordings by projecting your manual annotations on a subset of those cameras to the remaining ones, significantly reducing the amount of tedious manual annotations needed. It also provides easy-to-use interfaces for calibrating your cameras
   and creating datasets.
-- The <span style="color:#63a31f">**HybridNet Pytorch Library**</span> is our state of the art 3D pose estimation architecture. Our hybrid 2D/3D CNN architecture is faster to train, more precise and most importantly can run on siginficantly smaller dataset sizes than pure 3D CNNs, saving you countless hours of mind numbing annotations while still achieving highly precise markerless motion capture - even in scenarios with heavy occlusion.
+- The <span style="color:#63a31f">**HybridNet Pytorch Library**</span> is our state of the art 3D pose estimation architecture. Our hybrid 2D/3D CNN architecture is faster to train and more precise than pure 3D CNNs and most importantly can run on siginficantly smaller dataset sizes, saving you countless hours of mind numbing annotations while still achieving highly precise markerless motion capture - even in scenarios with heavy occlusion.
 
-![Alt Text](docs/assets/monkey_hand.gif)
+## Pretrained Models and Datasets
+We offer pretrained models and datasets for a variety of different scenarios. Click here to see what's currently available. Please contact us if you want to contribute your own pretrained model for others to use!\
+Below you can see the performance of our network trained on the available datasets:
+
+<figure class="half" style="display:flex">
+<p float="left">
+    <img width="48%" align="left" src="docs/assets/monkey_hand.gif">
+    <img width="48%" align="right" src="docs/assets/monkey_hand.gif">
+</p>
+</figure>
