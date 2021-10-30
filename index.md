@@ -2,10 +2,6 @@
 layout: home
 ---
 
----
-layout: home
----
-
 ![Alt Text](media/banner_new_new.png)
 
 
