@@ -2,7 +2,7 @@
 layout: home
 ---
 
-![Alt Text](media/banner_new_new.png)
+![Alt Text](jarvis-docs/assets/banner_new_new.png)
 
 
 JARVIS makes highly precise markerless 3D motion capture easy. All you need to get started is a multi camera recording setup and an idea of what you want to track.
@@ -23,4 +23,4 @@ Our System consists of three parts:\
   and creating datasets.
 - The <span style="color:#63a31f">**HybridNet Pytorch Library**</span> is our state of the art 3D pose estimation architecture. Our hybrid 2D/3D CNN architecture is faster to train, more precise and most importantly can run on siginficantly smaller dataset sizes than pure 3D CNNs, saving you countless hours of mind numbing annotations while still achieving highly precise markerless motion capture - even in scenarios with heavy occlusion.
 
-![Alt Text](media/tesr.gif)
+![Alt Text](jarvis-docs/assets/tesr.gif)
