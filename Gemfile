@@ -3,8 +3,10 @@
 source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
-gem "jekyll"
+#gem "jekyll"
 gem 'jemoji'
 gem 'webrick'
+
+gem "github-pages", "~> 219", group: :jekyll_plugins
 
 # gem "rails"

@@ -10,7 +10,7 @@ version:          1.0
 gitbook_version:  3.2.3
 
 url:              'https://jarvis-mocap.github.io/'
-baseurl:          '/'
+baseurl:          '/jarvis-docs/'
 rss:              RSS
 
 toc:
