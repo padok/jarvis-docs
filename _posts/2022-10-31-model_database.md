@@ -42,6 +42,14 @@ layout: post
   align: center;
 }
 
+.button_green {
+  background-color: #63a31f;
+}
+
+.button_blue {
+  background-color: #2064a4ff;
+}
+
 </style>
 
 Welcome to our Model Database! Here you will find all of the pretrained HybridNet Models currently available for download.\
@@ -52,15 +60,49 @@ Please note that these models are to be used for **pretraining only** and you st
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Human Hand</b></span><br>
     <img width="100%" src="docs/assets/monkey_hand.gif">
+    <table>
+      <tr>
+        <th>Annotated Frames</th>
+        <th>10000</th>
+      </tr>
+      <tr>
+        <th>Number of subjects</th>
+        <th>4</th>
+      </tr>
+      <tr>
+        <th>Dataset Size</th>
+        <th>1.5 GB</th>
+      </tr>
+    </table>
     <form method="get" action="docs/assets/Vortex-d_5.pth">
-    <button class="button">Download Model</button>
+    <button class="button button_green">Download Models</button>
+    </form>
+    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <button class="button button_blue">Download Dataset</button>
     </form>
     </div>
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Monkey Hand</b></span><br>
     <img width="100%" src="docs/assets/monkey_hand.gif">
+    <table>
+      <tr>
+        <th>Annotated Frames</th>
+        <th>10000</th>
+      </tr>
+      <tr>
+        <th>Number of subjects</th>
+        <th>4</th>
+      </tr>
+      <tr>
+        <th>Dataset Size</th>
+        <th>1.5 GB</th>
+      </tr>
+    </table>
     <form method="get" action="docs/assets/Vortex-d_5.pth">
-    <button class="button">Download Model</button>
+    <button class="button button_green">Download Models</button>
+    </form>
+    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <button class="button button_blue">Download Dataset</button>
     </form>
     </div>
 </figure>
@@ -70,16 +112,50 @@ Please note that these models are to be used for **pretraining only** and you st
 <figure class="half" style="display:flex">
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Human Pose</b></span><br>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
     <img width="100%" src="docs/assets/monkey_hand.gif">
-    <button class="button">Download Model</button>
+    <table>
+      <tr>
+        <th>Annotated Frames</th>
+        <th>10000</th>
+      </tr>
+      <tr>
+        <th>Number of subjects</th>
+        <th>4</th>
+      </tr>
+      <tr>
+        <th>Dataset Size</th>
+        <th>1.5 GB</th>
+      </tr>
+    </table>
+    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <button class="button">Download Models</button>
+    </form>
+    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <button class="button button_blue">Download Dataset</button>
     </form>
     </div>
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Mouse Pose</b></span><br>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
     <img width="100%" src="docs/assets/monkey_hand.gif">
-    <button class="button">Download Model</button>
+    <table>
+      <tr>
+        <th>Annotated Frames</th>
+        <th>10000</th>
+      </tr>
+      <tr>
+        <th>Number of subjects</th>
+        <th>4</th>
+      </tr>
+      <tr>
+        <th>Dataset Size</th>
+        <th>1.5 GB</th>
+      </tr>
+    </table>
+    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <button class="button">Download Models</button>
+    </form>
+    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <button class="button button_blue">Download Dataset</button>
     </form>
     </div>
 </figure>

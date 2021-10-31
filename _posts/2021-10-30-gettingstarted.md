@@ -5,19 +5,20 @@ date: 2021-10-28
 layout: post
 ---
 
+<center>
+<span style="color:#63a31f;font-size:18px"><b>This Guide is also available as a series of videos on Youtube!</b></span><br>
+<iframe width="336" height="189" src="https://www.youtube.com/embed/videoseries?list=PLHRdrn7aySLfxchhU8X_aTkcDVRMlwvPP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 
 Before you dive into our guide, here are some notes to help you find what you need:
 - If you want to get an overview of what JARVIS can and can't do our Paper might be a good starting point.
 - This guide covers all the basic steps you need to take to get from the idea of using markerless tracking to 3D pose predictions ready for analysis.
   This obviously makes it quite a lengthy read, so feel free to skip any sections that might not be relevant to you.
 - If you want in depth explanations or troubleshooting advice please check out our Manual, as this guide only covers the essential functionality of the tools.
-- You don't need any datasets already recorded or annotated to follow this guide. Click here to download the example data that is used in this tutorial and our video guide.
-<center>
-<span style="color:#63a31f;font-size:18px"><b>This Guide is also available as a series of videos on Youtube!</b></span><br>
-<iframe width="336" height="189" src="https://www.youtube.com/embed/videoseries?list=PLHRdrn7aySLfxchhU8X_aTkcDVRMlwvPP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+- You don't need any datasets already recorded or annotated to follow this guide. [Click here]() to download the example data that is used in this tutorial and our video guide.
 
 
+<hr style="border:2px solid gray">
 ## Designing a 3D Motion Capture Setup
 Designing a good Camera Setup for Motion Capture is probably the most critical step to achieve reliable tracking and will safe you a lot of frustration while annotating, training your network and analyzing your data.\
 That being said, without a proper starting point the vast number of available cameras, lenses, lighting options and possible setup configurations can be quite overwhelming.
