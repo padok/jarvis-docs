@@ -2,7 +2,7 @@
 layout: home
 ---
 
-![Alt Text](docs/assets/banner_new_new.png)
+![Alt Text](docs/assets/overview.png)
 
 
 JARVIS makes highly precise markerless 3D motion capture easy. All you need to get started is a multi camera recording setup and an idea of what you want to track.
@@ -26,9 +26,38 @@ Our System consists of three parts:
 We offer pretrained models and datasets for a variety of different scenarios. Click here to see what's currently available. Please contact us if you want to contribute your own pretrained model for others to use!\
 Below you can see the performance of our network trained on the available datasets:
 
-<figure class="half" style="display:flex">
+<figure class="quarter" style="display:flex">
 <p float="left">
-    <img width="48%" align="left" src="docs/assets/monkey_hand.gif">
-    <img width="48%" align="right" src="docs/assets/monkey_hand.gif">
+    <img width="24%" align="center" src="docs/assets/monkey_hand.gif">
+    <img width="24%" align="center" src="docs/assets/monkey_hand.gif">
+    <img width="24%" align="center" src="docs/assets/monkey_hand.gif">
+    <img width="24%" align="center" src="docs/assets/monkey_hand.gif">
+
 </p>
 </figure>
+
+
+## Supported Cameras
+
+As mentioned before to be able to take full advantage of our Acquisition Tool without any modifications you'll have to use one of our supported cameras. The table below shows all currently supported camera models, we'll try to expand this list in the near future!
+
+<table id="supported_cameras">
+  <tr>
+    <th>Company</th>
+    <th>Model Name</th>
+  </tr>
+  <tr>
+    <td>FLIR</td>
+    <td>Chameleon</td>
+  </tr>
+  <tr>
+    <td>FLIR</td>
+    <td>Blackfly S</td>
+  </tr>  <tr>
+      <td>FLIR</td>
+      <td>Grasshopper</td>
+    </tr>
+</table>
+
+## News
+* News about the project go here.
