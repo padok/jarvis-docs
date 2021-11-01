@@ -41,6 +41,9 @@ The first set of questions will cover all the camera and lens specific decisions
   </center>
 - <span style="color:#63a31f">**How long will the cables going from your cameras to the recording computer be?**</span>\
   This will determine whether GigE or USB3.0 cameras are the better choice for you. We generally recommend using USB cameras, but for distances longer than a couple of meters the ethernet based GigE cameras are the better choice.
+  <center>
+    <img src="docs/assets/cable_length.png" width="40%">
+  </center>
 
 Now that the configuration of the individual cameras is out of the way, we can move on to the questions regarding the whole setup.
 
