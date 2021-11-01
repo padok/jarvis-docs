@@ -11,7 +11,7 @@ layout: post
 </center>
 
 Before you dive into our guide, here are some notes to help you find what you need:
-- If you want to get an overview of what JARVIS can and can't do our Paper might be a good starting point. 
+- If you want to get an overview of what JARVIS can and can't do our Paper might be a good starting point.
 - This guide covers all the basic steps you need to take to get from the idea of using markerless tracking to 3D pose predictions ready for analysis.
   This obviously makes it quite a lengthy read, so feel free to skip any sections that might not be relevant to you.
 - If you want in depth explanations or troubleshooting advice please check out our Manual, as this guide only covers the essential functionality of the tools.
@@ -39,13 +39,29 @@ The first set of questions will cover all the camera and lens specific decisions
   <center>
     <img src="docs/assets/fast_slow.png" width="30%">
   </center>
-- <span style="color:#63a31f">**How long will the cables going from your cameras to the recording computer be?**</span>\
+- <span style="color:#63a31f">**How long will the cables going from my cameras to the recording computer be?**</span>\
   This will determine whether GigE or USB3.0 cameras are the better choice for you. We generally recommend using USB cameras, but for distances longer than a couple of meters the ethernet based GigE cameras are the better choice.
   <center>
     <img src="docs/assets/cable_length.png" width="40%">
   </center>
 
-Now that the configuration of the individual cameras is out of the way, we can move on to the questions regarding the whole setup.
+Now that the configuration of the individual cameras is out of the way, we can move on to the most important question regarding the whole setup.
+
+<span style="color:#63a31f">**How precise does the tracking need to be for my application and how much occlusion (both by other objects in the setup and by the subject     itself) do I expect?**</span>\
+This is the most important question as it determines the number of cameras you will need to use. First of all think about how many cameras fit into your budget keeping in mind that more cameras also require a more powerful recording computer. You can then determine the absolute minimum number of cameras that you need by making sure that every keypoint you want to track is visible in at least two cameras at all times, as illustrated in the sketch below. Note that this is the absolute minimum and depending on the precision you require we recommend to have every keypoint visible in at least three or four cameras at all times.
+<center>
+  <img src="docs/assets/cable_length.png" width="40%">
+</center>
+While thinking about your camera configuration try to make the angles between the cameras as wide as possible. Ideally you want to distribute your cameras as evenly as possible on a sphere around your tracking volume. The sketch below again tries to illustrate that principle.
+<center>
+  <img src="docs/assets/cable_length.png" width="40%">
+</center>
+
+With that all of the basic design decisions should be covered and the only thing left is a list of some of the easily overlooked but still very important things to consider:
+- There are two ways to go about mounting your cameras. You can either build a very rigid and permanent mounting system, or one that is flexible and easily repositioned. Both have their obvious advantages and disadvantages and you need to decide what fits your setup structure best. But keep in mind that by going for a flexible system you will have to recalibrate your setup **EVERY** time you use it. Accurate calibrations are THE foundation of precise 3D tracking and its hard to stress its importance enough.
+- Make sure you design your setup in a way that allows you to record good calibration videos. You can check out our [example calibration recording]() to get an idea of how that looks like.  
+
+
 
 
 <hr style="border:2px solid gray">
