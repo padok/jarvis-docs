@@ -11,7 +11,7 @@ layout: post
 </center>
 
 Before you dive into our guide, here are some notes to help you find what you need:
-- If you want to get an overview of what JARVIS can and can't do our Paper might be a good starting point.
+- If you want to get an overview of what JARVIS can and can't do our Paper might be a good starting point. 
 - This guide covers all the basic steps you need to take to get from the idea of using markerless tracking to 3D pose predictions ready for analysis.
   This obviously makes it quite a lengthy read, so feel free to skip any sections that might not be relevant to you.
 - If you want in depth explanations or troubleshooting advice please check out our Manual, as this guide only covers the essential functionality of the tools.
