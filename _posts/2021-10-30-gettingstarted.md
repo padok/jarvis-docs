@@ -45,16 +45,17 @@ The first set of questions will cover all the camera and lens specific decisions
     <img src="docs/assets/cable_length.png" width="40%">
   </center>
 
+
 Now that the configuration of the individual cameras is out of the way, we can move on to the most important question regarding the whole setup.
 
 <span style="color:#63a31f">**How precise does the tracking need to be for my application and how much occlusion (both by other objects in the setup and by the subject     itself) do I expect?**</span>\
 This is the most important question as it determines the number of cameras you will need to use. First of all think about how many cameras fit into your budget keeping in mind that more cameras also require a more powerful recording computer. You can then determine the absolute minimum number of cameras that you need by making sure that every keypoint you want to track is visible in at least two cameras at all times, as illustrated in the sketch below. Note that this is the absolute minimum and depending on the precision you require we recommend to have every keypoint visible in at least three or four cameras at all times.
 <center>
-  <img src="docs/assets/cable_length.png" width="40%">
+  <img src="docs/assets/number_cameras.png" width="30%">
 </center>
 While thinking about your camera configuration try to make the angles between the cameras as wide as possible. Ideally you want to distribute your cameras as evenly as possible on a sphere around your tracking volume. The sketch below again tries to illustrate that principle.
 <center>
-  <img src="docs/assets/cable_length.png" width="40%">
+  <img src="docs/assets/camera_positions.png" width="70%">
 </center>
 
 With that all of the basic design decisions should be covered and the only thing left is a list of some of the easily overlooked but still very important things to consider:
