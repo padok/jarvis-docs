@@ -2,6 +2,27 @@
 layout: home
 ---
 
+<style>
+.frame {
+  border: 4px solid #63a31f;
+  padding: 10px 10px;
+  border-radius: 10px;
+  width = 40%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+
+}
+
+.horizontal-center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+</style>
+
+
 ![Alt Text](docs/assets/overview.png)
 
 
@@ -26,15 +47,72 @@ Our System consists of three parts:
 We offer pretrained models and datasets for a variety of different scenarios. Click here to see what's currently available. Please contact us if you want to contribute your own pretrained model for others to use!\
 Below you can see the performance of our network trained on the available datasets:
 
-<figure class="quarter" style="display:flex">
-<p float="left">
-    <img width="24%" align="center" src="docs/assets/monkey_hand.gif">
-    <img width="24%" align="center" src="docs/assets/monkey_hand.gif">
-    <img width="24%" align="center" src="docs/assets/monkey_hand.gif">
-    <img width="24%" align="center" src="docs/assets/monkey_hand.gif">
-
-</p>
+<figure class="half" style="display:flex">
+    <div class="frame" align="center">
+    <span style="font-size:18px"><b>Human Hand</b></span><br>
+    <img width="100%" src="docs/assets/Human.gif">
+    <table>
+      <tr>
+        <th>Annotated Frames</th>
+        <th>10000</th>
+      </tr>
+      <tr>
+        <th>Number of subjects</th>
+        <th>4</th>
+      </tr>
+    </table>
+    </div>
+    <div class="frame" align="center">
+    <span style="font-size:18px"><b>Monkey Hand</b></span><br>
+    <img width="100%" src="docs/assets/Monkey.gif">
+    <table>
+      <tr>
+        <th>Annotated Frames</th>
+        <th>3000</th>
+      </tr>
+      <tr>
+        <th>Number of subjects</th>
+        <th>1</th>
+      </tr>
+    </table>
+    </div>
 </figure>
+
+<br>
+
+<figure class="half" style="display:flex">
+    <div class="frame" align="center">
+    <span style="font-size:18px"><b>Rat Pose</b></span><br>
+    <img width="100%" src="docs/assets/Rat.gif">
+    <table>
+      <tr>
+        <th>Annotated Frames</th>
+        <th>2000</th>
+      </tr>
+      <tr>
+        <th>Number of subjects</th>
+        <th>1</th>
+      </tr>
+    </table>
+    </div>
+    <div class="frame" align="center">
+    <span style="font-size:18px"><b>Human Pose</b></span><br>
+    <img width="100%" src="docs/assets/Dancer.gif">
+    <table>
+      <tr>
+        <th>Annotated Frames</th>
+        <th>1500</th>
+      </tr>
+      <tr>
+        <th>Number of subjects</th>
+        <th>1</th>
+      </tr>
+    </table>
+    </div>
+</figure>
+
+
+![Alt Text](docs/assets/total_error.png)
 
 
 ## Supported Cameras
