@@ -6,9 +6,14 @@ layout: post
 ---
 
 <center>
+<span style="color:#63a31f;font-size:18px"><b>This Guide is very much work in progress!</b></span><br>
+</center>
+
+
+<!-- <center>
 <span style="color:#63a31f;font-size:18px"><b>This Guide is also available as a series of videos on Youtube!</b></span><br>
 <iframe width="336" height="189" src="https://www.youtube.com/embed/videoseries?list=PLHRdrn7aySLfxchhU8X_aTkcDVRMlwvPP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+</center> -->
 
 Before you dive into our guide, here are some notes to help you find what you need:
 - If you want to get an overview of what JARVIS can and can't do our Paper might be a good starting point.

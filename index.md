@@ -2,23 +2,30 @@
 layout: home
 ---
 
+
 <style>
+
+.flex_align {
+	display: flex;
+	flex-flow: no wrap;
+	flex-direction: row;
+}
+
+<!-- @media all and (max-width: 500px) {
+	.flex_align {
+		display: flex;
+		flex-flow: row wrap;
+		flex-direction: column;
+	}
+} -->
+
 .frame {
   border: 4px solid #63a31f;
   padding: 10px 10px;
   border-radius: 10px;
-  width = 40%;
   margin-right: 2.5%;
   margin-left: 2.5%;
-
-}
-
-.horizontal-center {
-  margin: 0;
-  position: absolute;
-  left: 50%;
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+	width = 40%;
 }
 </style>
 
@@ -47,7 +54,7 @@ Our System consists of three parts:
 We offer pretrained models and datasets for a variety of different scenarios. Click here to see what's currently available. Please contact us if you want to contribute your own pretrained model for others to use!\
 Below you can see the performance of our network trained on the available datasets:
 
-<figure class="half" style="display:flex">
+<div class = "flex_align">
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Human Hand</b></span><br>
     <img width="100%" src="docs/assets/Human.gif">
@@ -76,11 +83,11 @@ Below you can see the performance of our network trained on the available datase
       </tr>
     </table>
     </div>
-</figure>
+</div>
 
 <br>
 
-<figure class="half" style="display:flex">
+<div class="flex_align">
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Rat Pose</b></span><br>
     <img width="100%" src="docs/assets/Rat.gif">
@@ -109,7 +116,7 @@ Below you can see the performance of our network trained on the available datase
       </tr>
     </table>
     </div>
-</figure>
+</div>
 
 
 ![Alt Text](docs/assets/total_error.png)
