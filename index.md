@@ -11,13 +11,13 @@ layout: home
 	flex-direction: row;
 }
 
-<!-- @media all and (max-width: 500px) {
+@media all and (max-width: 500px) {
 	.flex_align {
 		display: flex;
-		flex-flow: row wrap;
+		flex-flow: wrap;
 		flex-direction: column;
 	}
-} -->
+}
 
 .frame {
   border: 4px solid #63a31f;
@@ -25,12 +25,12 @@ layout: home
   border-radius: 10px;
   margin-right: 2.5%;
   margin-left: 2.5%;
-	width = 40%;
+	width = 30%;
 }
 </style>
 
 
-![Alt Text](docs/assets/overview.png)
+![Alt Text](docs/assets/overview.svg)
 
 
 JARVIS makes highly precise markerless 3D motion capture easy. All you need to get started is a multi camera recording setup and an idea of what you want to track.
@@ -57,7 +57,7 @@ Below you can see the performance of our network trained on the available datase
 <div class = "flex_align">
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Human Hand</b></span><br>
-    <img width="100%" src="docs/assets/Human.gif">
+    <img width="100%" src="docs/assets/gifs/Human.gif">
     <table>
       <tr>
         <th>Annotated Frames</th>
@@ -69,9 +69,10 @@ Below you can see the performance of our network trained on the available datase
       </tr>
     </table>
     </div>
+		<br>
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Monkey Hand</b></span><br>
-    <img width="100%" src="docs/assets/Monkey.gif">
+    <img width="100%" src="docs/assets/gifs/Monkey.gif">
     <table>
       <tr>
         <th>Annotated Frames</th>
@@ -84,13 +85,11 @@ Below you can see the performance of our network trained on the available datase
     </table>
     </div>
 </div>
-
 <br>
-
 <div class="flex_align">
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Rat Pose</b></span><br>
-    <img width="100%" src="docs/assets/Rat.gif">
+    <img width="100%" src="docs/assets//gifs/Rat.gif">
     <table>
       <tr>
         <th>Annotated Frames</th>
@@ -102,9 +101,10 @@ Below you can see the performance of our network trained on the available datase
       </tr>
     </table>
     </div>
+		<br>
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Human Pose</b></span><br>
-    <img width="100%" src="docs/assets/Dancer.gif">
+    <img width="100%" src="docs/assets/gifs/Dancer.gif">
     <table>
       <tr>
         <th>Annotated Frames</th>
@@ -118,6 +118,9 @@ Below you can see the performance of our network trained on the available datase
     </div>
 </div>
 
+<br>
+
+Our model outperforms the other currently available methods when trained on our human hand tracking dataset. Below you can see the performance of our toolbox compared to the well established markerless tracking toolbox DeepLabCut (DLC) and the recently released Dannce 3D tracking toolbox:  
 
 ![Alt Text](docs/assets/total_error.png)
 

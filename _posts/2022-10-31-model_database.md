@@ -6,22 +6,27 @@ layout: post
 ---
 
 <style>
+.flex_align {
+	display: flex;
+	flex-flow: no wrap;
+	flex-direction: row;
+}
+
+@media all and (max-width: 500px) {
+	.flex_align {
+		display: flex;
+		flex-flow: wrap;
+		flex-direction: column;
+	}
+}
+
 .frame {
   border: 4px solid #63a31f;
   padding: 10px 10px;
   border-radius: 10px;
-  width = 40%;
   margin-right: 2.5%;
   margin-left: 2.5%;
-
-}
-
-.horizontal-center {
-  margin: 0;
-  position: absolute;
-  left: 50%;
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+	width = 30%;
 }
 
 .button {
@@ -56,10 +61,10 @@ Welcome to our Model Database! Here you will find all of the pretrained HybridNe
 All the models here are officially supported and we only list models that achieve a level of accuracy comparable to the one we achieve in our paper here.
 Please note that these models are to be used for **pretraining only** and you still need to train the network on a dataset created for your specific setup.
 
-<figure class="half" style="display:flex">
+<div class="flex_align">
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Human Hand</b></span><br>
-    <img width="100%" src="docs/assets/monkey_hand.gif">
+    <img width="100%" src="docs/assets/gifs/Human.gif">
     <table>
       <tr>
         <th>Annotated Frames</th>
@@ -81,17 +86,18 @@ Please note that these models are to be used for **pretraining only** and you st
     <button class="button button_blue">Download Dataset</button>
     </form>
     </div>
+		<br>
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Monkey Hand</b></span><br>
-    <img width="100%" src="docs/assets/monkey_hand.gif">
+    <img width="100%" src="docs/assets/gifs/Monkey.gif">
     <table>
       <tr>
         <th>Annotated Frames</th>
-        <th>10000</th>
+        <th>3000</th>
       </tr>
       <tr>
         <th>Number of subjects</th>
-        <th>4</th>
+        <th>1</th>
       </tr>
       <tr>
         <th>Dataset Size</th>
@@ -105,22 +111,47 @@ Please note that these models are to be used for **pretraining only** and you st
     <button class="button button_blue">Download Dataset</button>
     </form>
     </div>
-</figure>
+</div>
 
 <br>
 
-<figure class="half" style="display:flex">
+<div class="flex_align">
+    <div class="frame" align="center">
+    <span style="font-size:18px"><b>Rat Pose</b></span><br>
+    <img width="100%" src="docs/assets/gifs/Rat.gif">
+    <table>
+      <tr>
+        <th>Annotated Frames</th>
+        <th>2000</th>
+      </tr>
+      <tr>
+        <th>Number of subjects</th>
+        <th>1</th>
+      </tr>
+      <tr>
+        <th>Dataset Size</th>
+        <th>1.5 GB</th>
+      </tr>
+    </table>
+    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <button class="button">Download Models</button>
+    </form>
+    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <button class="button button_blue">Download Dataset</button>
+    </form>
+    </div>
+		<br>
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Human Pose</b></span><br>
-    <img width="100%" src="docs/assets/monkey_hand.gif">
+    <img width="100%" src="docs/assets/gifs/Dancer.gif">
     <table>
       <tr>
         <th>Annotated Frames</th>
-        <th>10000</th>
+        <th>1500</th>
       </tr>
       <tr>
         <th>Number of subjects</th>
-        <th>4</th>
+        <th>1</th>
       </tr>
       <tr>
         <th>Dataset Size</th>
@@ -134,28 +165,4 @@ Please note that these models are to be used for **pretraining only** and you st
     <button class="button button_blue">Download Dataset</button>
     </form>
     </div>
-    <div class="frame" align="center">
-    <span style="font-size:18px"><b>Mouse Pose</b></span><br>
-    <img width="100%" src="docs/assets/monkey_hand.gif">
-    <table>
-      <tr>
-        <th>Annotated Frames</th>
-        <th>10000</th>
-      </tr>
-      <tr>
-        <th>Number of subjects</th>
-        <th>4</th>
-      </tr>
-      <tr>
-        <th>Dataset Size</th>
-        <th>1.5 GB</th>
-      </tr>
-    </table>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
-    <button class="button">Download Models</button>
-    </form>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
-    <button class="button button_blue">Download Dataset</button>
-    </form>
-    </div>
-</figure>
+</div>
