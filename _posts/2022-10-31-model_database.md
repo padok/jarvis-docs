@@ -166,3 +166,38 @@ Please note that these models are to be used for **pretraining only** and you st
     </form>
     </div>
 </div>
+
+<br>
+
+
+Additionally we provide models pretrained on the 1.5M image image-classification dataset EcoSet as well as the MPII human pose dataset. Those can be used as a starting point when training on a task different to those listed above.
+
+<div class="flex_align">
+    <div class="frame" align="center">
+    <span style="font-size:18px"><b>EcoSet Image Classification</b></span><br>
+    <img width="100%" src="docs/assets/gifs/Rat.gif">
+    <table>
+      <tr>
+        <th>Number Images</th>
+        <th>1.5M</th>
+      </tr>
+    </table>
+    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <button class="button">Download Models</button>
+    </form>
+    </div>
+		<br>
+    <div class="frame" align="center">
+    <span style="font-size:18px"><b>MPII Human Pose</b></span><br>
+    <img width="100%" src="docs/assets/mpii.png">
+    <table>
+      <tr>
+        <th>Number Images</th>
+        <th>18000</th>
+      </tr>
+    </table>
+    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <button class="button">Download Models</button>
+    </form>
+    </div>
+</div>
