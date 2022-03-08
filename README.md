@@ -8,7 +8,7 @@ This is a fork of the jekyll-gitbook theme, for the documentation of the JARVIS 
   ~~~
       echo 'export GEM_HOME=~/.ruby/' >> ~/.bashrc
       echo 'export PATH="$PATH:~/.ruby/bin"' >> ~/.bashrc
-      source ~/.bashrc</code>
+      source ~/.bashrc
   ~~~
 - install bundler with <code>gem install bundler</code>
 - install other gems with <code>bundle install</code>
