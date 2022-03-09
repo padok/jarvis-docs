@@ -75,6 +75,13 @@ input[type='checkbox'] {
   margin-bottom: 0;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
+
 </style>
 
 <center>
@@ -87,13 +94,14 @@ input[type='checkbox'] {
 </center> -->
 
 Welcome to our Getting Started Guide! This guide will teach you how to set up the three different parts of our toolbox and how to work with our example data. This will help you get an idea of all the steps required to build and use a 3D markerless motion capture setup. After working through this guide you will be ready to work through our [Manual](/jarvis-docs/2021-10-29-manual.html) and learn all the things neccessary to build you own motion capture system from scratch.\
-Note that this Guide is somewhat back to front. You will learn how to work with annotated data before we show you how to actually annotate it. We are not doing that to confuse you but because it helps to get a feel for what you are trying to achieve before you spend hours annotating images.
+Note that this Guide is somewhat back to front. You will learn how to work with annotated data before we show you how to actually annotate it. We are not doing that to confuse you but because it helps to get a feel for what you are trying to achieve before you spend hours annotating images.<br>
+One additional note, JARVIS uses two different formats for the annotated data. The one you will work with first is called the **trainingset**. A trainingset is a finished set of annotations in the right format to be used by the JARVIS Pytorch module. The second one is called a **dataset**, this is the format that is used by the AnnotationTool. We know this can be a bit confusing, but the two different formats are neccessary to make some features of JARVIS work.
 
 <hr style="border:2px solid gray">
-## Exploring the Provided Examples
+## Exploring the Provided Example Trainingset
 Let's start by playing around with our provided example so you can familiarize with our software and get a better feel for the task and the workflow.<br>
 The example data we're working with in this tutorial are recordings of one of our monkeys - his name is Ralph - performing a simple grasping task in our 12 camera setup. Your task is to track his hand while he is enjoying a variety of fruits we hand him.
-This tutorial has 4 steps:
+We'll split the task into four steps:
 1. Installing our [Pytorch Toolbox](https://www.lensation.de/calculator.html) and downloading the example recordings.
 2. Visualizing the provided annotations, both in 2D and 3D.
 3. Training the entire network stack.
@@ -138,13 +146,13 @@ With that out of the way the only thing left to do is downloading the example re
 :tada: Congratulations, you are all set up now! To launch our handy streamlit GUI interface just open a terminal, activate the conda environment by running `conda activate jarvis` and type `jarvis launch`.
 
 
-### 2. Visualizing the Example Dataset
-Before we dive into training JARVIS to track anything it is always a good idea to have a look at the dataset your are using, both in 2D and in 3D.<br>
+### 2. Visualizing the Example Trainingset
+Before we dive into training JARVIS to track anything it is always a good idea to have a look at the trainingset your are using, both in 2D and in 3D.<br>
 To do this first launch the JARVIS streamlit dashboard as described above. Once the GUI pops up in your browser you can select the Example_Project from the drop-down menu and then navigate to the visualization menu.
 
-<img width="100%" src="docs/assets/gifs/dataset_vis.gif">
+<img src="docs/assets/gifs/dataset_vis.gif" class="center">
 
-As you can see there are a bunch of option for visualizing both your predictions and your datasets. You can see how that looks like above, but feel free to play around with it a bit to familiarize yourself with the data you are working with. Once you start working with your own data, checking your dataset before training is really important to ensure there was no problem when creating it and your network will get the input you expect it to get.
+As you can see there are a bunch of option for visualizing both your predictions and your trainingset. You can see how that looks like above, but feel free to play around with it a bit to familiarize yourself with the data you are working with. Once you start working with your own data, checking your trainingset before training is really important to ensure there was no problem when creating it and your network will get the input you expect it to get.
 
 
 ### 3. Training the Entire Network
@@ -156,7 +164,7 @@ Now that you know what our data looks like it is time to train the network stack
   <div class="collapsible-content">
     <div class="content-inner">
       <p>
-        If you want some more detail on what's happening behind the scenes when training a network this section is for you, otherwise feel free to skip it!
+        If you want some more detail on what's happening behind the scenes when training a network this section is for you, otherwise feel free to skip it!<br>
         Our network stack is trained in four steps:
         <ol>
         <li><b>Training CenterDetect:</b> In this step a 2D-CNN is trained to detect the center of the entity you are tracking. This will be used to estimate the location of the entity in 3D, essentially telling the 3D-CNN where to look.</li>
@@ -170,10 +178,29 @@ Now that you know what our data looks like it is time to train the network stack
 </div>
 
 
-### 4. Predicting Poses on the Example Recording
+### 4. Predicting Poses for the Example Recording
 If you haven't already you should now download our [example recordings](). Once you have those saved on your computer all you need to do is launch the JARVIS GUI and navigate to the 'Predict3D' menu as shown below. Here you'll have to specify a couple of things:
 1. **Path of recording directory** is the path of the example recording you just downloaded, it should include the 'Example_Recording' directory.
-2. **Output Directory** lets you specify where you want to save the prediction results.
 3. **Weights for CenterDetect / HybridNet** lets you specify which weights you want to use. If you have trained models yourself you can leave them at 'latest'. If you didn't train the network yourself you'll have to put the path of the pretrained weights here. They can be found in the 'pretrained' directory inside your 'JARVIS-Hybridnet' folder.
 4. **SkeletonPreset** lets you select a skeleton from a number of presets. For the example you should select the 'Hand' preset. Leaving it at 'None' will use the default colorscheme, without connecting any joints.
-5. **Start Frame & Number Frames** let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000.   
+5. **Start Frame & Number Frames** let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000, to predict until the end of the recording set it to -1.
+
+<img src="docs/assets/Training_Screenshot.png" class="center">
+
+Once all those settings are correct, press the predict button and wait for the progress bar to fill up. Once the process is finished you will find 'Videos' folder containing your recordings overlaid with the predicted keypoints as well as a 'data3D.csv' file that contains the 3D coordinates for every point in time.
+
+
+## Creating Your Own Trainingset from the Example Recordings
+Now that you know what a trainingset looks like and how you can use it to train the network we'll take a step back and cover the process of creating this trainingset from a multi-camera recording. Like before we'll split this task into smaller steps:
+1. Installing the AnnotationTool.
+2. Extracting a dataset from the Example Recording.
+3. Creating a set of Calibration Parameters.
+4. Annotating a set of Frames.
+5. Exporting the dataset as a trainingset.
+
+If everything goes according to plan you'll end up with a trainingset very similar to the one you used in the previous part of the tutorial.
+
+
+
+
+:tada: That's it! Now it's time to get started with training a model on your own data. If you want to learn more about our toolbox we strongly suggest you have a look at our [Manual](/jarvis-docs/2021-10-29-manual.html). There you will find detailed instructions on every step of building a 3D motion capture setup with JARVIS.
