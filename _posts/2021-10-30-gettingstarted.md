@@ -135,7 +135,7 @@ Once you install the tool you will be greeted with a home screen that looks like
  <img class="modal-content" id="img01">
  <div id="caption"></div>
 </div>
-<script src="docs/assets/js/image_modal.js"> </script>
+<script src="{{site.baseurl}}/docs/assets/js/image_modal.js"> </script>
 
 
 <!-- :tada: That's it! Now it's time to get started with training a model on your own data. If you want to learn more about our toolbox we strongly suggest you have a look at our [Manual](/jarvis-docs/2021-10-29-manual.html). There you will find detailed instructions on every step of building a 3D motion capture setup with JARVIS. -->
