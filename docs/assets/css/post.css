@@ -71,12 +71,11 @@ input[type='checkbox'] {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 85%;
+  width: 75%;
 }
 
 /* Style the Image Used to Trigger the Modal */
 .modalImg {
- border-radius: 10px;
  cursor: pointer;
  transition: 0.3s;
 }

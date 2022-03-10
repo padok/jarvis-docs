@@ -34,10 +34,12 @@ Let's start by playing around with our provided example so you can familiarize w
 The example data we're working with in this tutorial are recordings of one of our monkeys - his name is Ralph - performing a simple grasping task in our 12 camera setup. Your task is to track his hand while he is enjoying a variety of fruits we hand him.
 We'll split the task into four steps:
 
-1. <span style="color:#63a31f">Installing</span> our [Pytorch Toolbox](https://www.lensation.de/calculator.html) and downloading the example recordings.
-2. <span style="color:#63a31f">Visualizing</span> the provided annotations, both in 2D and 3D.
-3. <span style="color:#63a31f">Training</span> the entire network stack.
-4. Using your freshly trained network to <span style="color:#63a31f">track</span> Ralph's hand in the example recording.
+1. <span style="color:#63a31f"><b>Installing</b></span> our [Pytorch Toolbox](https://www.lensation.de/calculator.html) and downloading the example recordings.
+2. <span style="color:#63a31f"><b>Visualizing</b></span> the provided annotations, both in 2D and 3D.
+3. <span style="color:#63a31f"><b>Training</b></span> the entire network stack.
+4. Usig your freshly trained network to <span style="color:#63a31f"><b>track</b></span> Ralph's hand in the example recording.
+<br>
+
 
 ### 1. Installing the Toolbox and Downloading the Data
 First let's take care of setting up the software. Make sure you have a version of [Anaconda](https://www.anaconda.com/) installed and your PC has a Nvidia GPU with working CUDA drivers installed.
@@ -76,6 +78,7 @@ jarvis hello
 With that out of the way the only thing left to do is downloading the example recordings by clicking [here](). To make everything work right out of the box you should put the 'Example Recordings' folder into your main JARVIS-HybridNet directory.<br>
 <br>
 :tada: Congratulations, you are all set up now! To launch our handy streamlit GUI interface just open a terminal, activate the conda environment by running `conda activate jarvis` and type `jarvis launch`.
+<br>
 
 
 ### 2. Visualizing the Example Trainingset
@@ -86,6 +89,7 @@ To do this first launch the JARVIS streamlit dashboard as described above. Once 
 <script>create_modal("Dataset_Vis");</script>
 
 As you can see there are a bunch of option for visualizing both your predictions and your trainingset. You can see how that looks like above, but feel free to play around with it a bit to familiarize yourself with the data you are working with. Once you start working with your own data, checking your trainingset before training is really important to ensure there was no problem when creating it and your network will get the input you expect it to get.
+<br>
 
 
 ### 3. Training the Entire Network
@@ -109,14 +113,15 @@ Now that you know what our data looks like it is time to train the network stack
     </div>
   </div>
 </div>
+<br>
 
 
 ### 4. Predicting Poses for the Example Recording
 If you haven't already you should now download our [example recordings](). Once you have those saved on your computer all you need to do is launch the JARVIS GUI and navigate to the <span style="color:#63a31f">Predict3D</span> menu as shown below. Here you'll have to specify a couple of things:
-1. **Path of recording directory** is the path of the example recording you just downloaded, it should include the 'Example_Recording' directory.
-3. **Weights for CenterDetect / HybridNet** lets you specify which weights you want to use. If you have trained models yourself you can leave them at 'latest'. If you didn't train the network yourself you'll have to put the path of the pretrained weights here. They can be found in the 'pretrained' directory inside your 'JARVIS-Hybridnet' folder.
-4. **SkeletonPreset** lets you select a skeleton from a number of presets. For the example you should select the 'Hand' preset. Leaving it at 'None' will use the default colorscheme, without connecting any joints.
-5. **Start Frame & Number Frames** let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000, to predict until the end of the recording set it to -1.
+- **Path of recording directory** is the path of the example recording you just downloaded, it should include the 'Example_Recording' directory.
+- **Weights for CenterDetect / HybridNet** lets you specify which weights you want to use. If you have trained models yourself you can leave them at 'latest'. If you didn't train the network yourself you'll have to put the path of the pretrained weights here. They can be found in the 'pretrained' directory inside your 'JARVIS-Hybridnet' folder.
+- **SkeletonPreset** lets you select a skeleton from a number of presets. For the example you should select the 'Hand' preset. Leaving it at 'None' will use the default colorscheme, without connecting any joints.
+- **Start Frame & Number Frames** let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000, to predict until the end of the recording set it to -1.
 
 <img class="modalImg center" id="Training_Screenshot" src="docs/assets/Training_Screenshot.png" alt="Loss and accuracy statistics during training">
 <script>create_modal("Training_Screenshot");</script>
@@ -124,16 +129,19 @@ If you haven't already you should now download our [example recordings](). Once 
 
 Once all those settings are correct, press the predict button and wait for the progress bar to fill up. Once the process is finished you will find 'Videos' folder containing your recordings overlaid with the predicted keypoints as well as a 'data3D.csv' file that contains the 3D coordinates for every point in time.
 
+
 <hr style="border:2px solid gray">
 ## Creating Your Own Trainingset from the Example Recordings
 Now that you know what a trainingset looks like and how you can use it to train the network we'll take a step back and cover the process of creating this trainingset from a multi-camera recording. Like before we'll split this task into smaller steps:
-1. <span style="color:#63a31f">Installing</span> the AnnotationTool.
-2. <span style="color:#63a31f">Extracting</span> a dataset from the Example Recording.
-3. Creating a set of <span style="color:#63a31f">Calibration</span> Parameters.
-4. <span style="color:#63a31f">Annotating</span> a set of Frames.
-5. <span style="color:#63a31f">Exporting</span> the dataset as a trainingset.
+1. <span style="color:#63a31f"><b>Installing</b></span> the AnnotationTool.
+2. <span style="color:#63a31f"><b>Extracting</b></span> a dataset from the Example Recording.
+3. Creating a set of <span style="color:#63a31f"><b>Calibration</b></span> Parameters.
+4. <span style="color:#63a31f"><b>Annotating</b></span> a Frameset.
+5. <span style="color:#63a31f"><b>Exporting</b></span> the dataset as a trainingset.
 
 If everything goes according to plan you'll end up with a trainingset very similar to the one you used in the previous part of the tutorial.
+<br>
+
 
 ### 1. Installing the AnnotationTool
 If you are using Windows, MacOS all you have to do is got to our [downloads page]() and grab the installer for your OS. If you are running a different Linux distribution you will have to build the AnnotationTool yourself. There is a guide on how to do that on its [GitHub page](https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool).
@@ -141,6 +149,55 @@ Once you install the tool you will be greeted with a home screen that looks like
 
 <img class="modalImg center" id="HomeScreenImg" src="docs/assets/AnnotationTool_HomeScreen.png" alt="AnnotationTool Homescreen">
 <script>create_modal("HomeScreenImg");</script>
+<br>
+
+
+### 2. Extracting a Dataset from the Example Recording
+Clicking on the first item in the list on the homescreen will open up the dataset extraction menu. This will allow you to extract framesets from your recordings that you will subsequently annotate. For this tutorial we'll stick to the basics and use the fastest and quickest way of extracting a handful of framesets. Definitely check out the relevant [section]() in our Manual to learn all the details about how to create a dataset that is as representative of your entire recording as possible.
+First let's go through the options in the <span style="color:#63a31f">Configuration</span> section.
+- **New Dataset Name** is the name of the dataset you're going to create.
+- **New Dataset Path** is the directory in which your new dataset will be saved.
+- **Framesets to extract per Segment** is the number of framesets the tool will create, you can leave it at the default of 10 for this example.
+- **Sampling Method** is the method the tool uses to decide which frames in your recording to use. <span style="color:#63a31f">kmeans</span> is the method you should use for your real datasets, but for this tutorial we'll use  <span style="color:#63a31f">uniform</span> to make the extraction process a bit quicker.
+
+Next up is the <span style="color:#63a31f">Recordings</span> section. Just click <span style="color:#63a31f">Add Recording</span> and navigate to the 'Example_Recording' directory and click <span style="color:#63a31f">Open</span>.<br>
+The last thing left to do is to tell the tool the names of all the <span style="color:#63a31f">Entities</span> and <span style="color:#63a31f">Keypoints</span> you want to annotate. Entities refers to the animal/object you are tracking. (Note: The AnnotationTool supports annotating multiple entities in one dataset, but the rest of our toolbox currently does not). For our example you can load the 'Hand' preset by clicking <span style="color:#63a31f">Load Preset</span>.
+
+<img class="modalImg center" id="Dataset_Menu" src="docs/assets/Dataset_Menu.png" alt="Dataset extraction menu and settings to create example dataset">
+<script>create_modal("Dataset_Menu");</script>
+
+If your dataset menu looks like shown above you can click <span style="color:#63a31f">Create</span> to create a new dataset. A progress window should pop up and once it is finished you should find a dataset folder containing a '.yaml' config file as well as a directory containing extracted frames for each camera.
+<br>
+
+
+### 3. Creating a Set of Calibration Parameters
+One of the most important steps in creating good 3D ground truth annotations is precise camera calibration. As always we have a comprehensive [section]() on how to record calibration recordings in our Manual. For this example we provide a set of example calibration recordings that you can download by clicking [here]().<br>
+Go back to the homescreen of the AnnotationTool and select the <span style="color:#63a31f">Create new Calibration</span> menu item.
+Like before let's first go through the options in the <span style="color:#63a31f">General</span> section.
+- **Calibration Set Name** is the name of the set of calibration parameters you're going to create.
+- **Calibration Set Savepath** is the directory in which your new calibration parameters will be saved.
+- **Separate Recordings for Intrinsics** can be set to no if you want to use your extrinsic recordings for intrinsics calibration. This is not recommended, see the manual for details.
+- **Intrinsics Folder Path** is the directory that contains all the recordings for intrinsic calibration (you'll find it inside the downloaded 'Calibration_Example' directory).  
+- **Extrinsics Folder Path** is the directory that contains all the recordings for extrinsics calibration (you'll find it inside the downloaded 'Calibration_Example' directory).
+
+Calibrating on your own data might require you to change some settings in the <span style="color:#63a31f">Calibration Settings</span> and the <span style="color:#63a31f">Checkerboard Layout</span> sections as well. For this example the defaults are already correct though, so you can leave all those settings untouched.
+
+Once you have entered all those settings you can click the <span style="color:#63a31f">Update Cameras</span> button to add all cameras and pairs to the lists.<br>
+After that you're almost ready to calibrate the cameras. The last thing you need to do is to delete the camera pair labeled 'Camera_LC --> Camera_B' and instead add the 3 camera pair 'Camera_T --> Camera_LC --> Camera_B'. The GIF below shows you how to do that in detail.
+
+<img class="modalImg center" id="3_Cam_Pair" src="docs/assets/gifs/Add_3_Camera_Pair.gif" alt="How to add a 3-camera-pair">
+<script>create_modal("3_Cam_Pair");</script>
+
+You're now ready to click the <span style="color:#63a31f">Calibrate Button</span>. This will take a little bit, but once it is done a info window will pop up showing you the quality of all your calibrations. It should look similar to this:
+
+<img class="modalImg center" id="Calib_Results" src="docs/assets/Calib_Results.png" alt="Statistics after camera calibration">
+<script>create_modal("Calib_Results");</script>
+
+You will now find a directory containing one '.yaml' calibration file per camera at the path that you specified.
+<br>
+
+
+### 4. Annotating a Frameset
 
 
 <!-- :tada: That's it! Now it's time to get started with training a model on your own data. If you want to learn more about our toolbox we strongly suggest you have a look at our [Manual](/jarvis-docs/2021-10-29-manual.html). There you will find detailed instructions on every step of building a 3D motion capture setup with JARVIS. -->
