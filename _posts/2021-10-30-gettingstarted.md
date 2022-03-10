@@ -198,6 +198,35 @@ You will now find a directory containing one '.yaml' calibration file per camera
 
 
 ### 4. Annotating a Frameset
+Now that you have both a dataset and the calibrations that go along with it you can start annotating your framesets. First navigate back to the homescreen and select the <span style="color:#63a31f">Annotate Dataset</span> item. Navigate to the directory of the dataset you created earlier and select the '.yaml' config file as shown below. You will then get an overview over the different segments of your dataset (in the example case there is only one) and a list of all your cameras. Select the segment you want to annotate and click the <span style="color:#63a31f">Load Dataset</span> button.<br>
+
+<img class="modalImg center" id="Load_Dataset" src="docs/assets/gifs/Load_Dataset.gif" alt="Statistics after camera calibration">
+<script>create_modal("Load_Dataset");</script>
+
+With the dataset loaded succesfully all that's left to do is to add the calibrations you created earlier to the dataset. To do this click on the big blue plus sign on the left side of the screen and select the directory that contains the '.yaml' calibration files.<br>
+After that you can start annotating. The workflow is as following:<br>
+1. <span style="color:#63a31f"><b>Annotate all the frames in one frameset.</b></span> You can switch between them either by clicking the <span style="color:#63a31f">Next >></span> and <span style="color:#63a31f"><< Previous</span> on the left or by double clicking one of the cameras in the list. As soon as you annotate a keypoint in two or more cameras you will see a error bar appear in the <span style="color:#63a31f">Reprojection Tool</span>. This is an indicator for the consistency of your annotations, the lower the better.
+2. <span style="color:#63a31f"><b>Switch to the next frameset once all reprojection error bars are sufficiently low.</b></span> Once you annotated all joints for one frameset you can switch to the next one using the <span style="color:#63a31f">Next Set >></span> button. If you have a dataset consisting of more than one segment the dropdown in the top left corner will allow you to switch between segments.
+
+<img class="modalImg center" id="Annotating" src="docs/assets/gifs/Annotating.gif" alt="Statistics after camera calibration">
+<script>create_modal("Annotating");</script>
+
+For a real dataset it is important that you annotate all framesets in a dataset before proceeding to the trainingset exporting step. Since this is only a tutorial we suggest you play around with the tool long enough to get familiar with and and get a feeling of how the Reprojection Tool works. Once you feel comfortable you can move on to the next step.
 
 
-<!-- :tada: That's it! Now it's time to get started with training a model on your own data. If you want to learn more about our toolbox we strongly suggest you have a look at our [Manual](/jarvis-docs/2021-10-29-manual.html). There you will find detailed instructions on every step of building a 3D motion capture setup with JARVIS. -->
+### 5. Exporting a Trainingset
+Almost done! As always navigate back to the homescreen and select the last item in the list: <span style="color:#63a31f">Export Trainingset</span>. As before there are a handful of parameters you need to set:
+- **Trainingset Name** is the name of the trainingset you will create.
+- **Trainingset Savepath** is the directory the trainingset will be saved in.
+- **TrainingSet Type** lets you select if you want to create a 2D or a 3D trainingset. 3D trainingsets include the calibration parameters and are what you almost always will be using. Only use the 2D option if you are working with single camera data or you are creating a pretraining trainingset.
+
+The rest of the parameters are related to how the data is split into training and validation data. The defaults should be fine for almost all applications, so just leave them untouched for the example.<br>
+After setting your parameters you can click the blue 'plus' button to add one or more dataset to the trainingset. For the example add only the dataset you did annotate earlier. Selection works just like in the annotation mode by selecting the '.yaml' dataset config file. After adding the dataset the pie chart in the bottom left corner should be show some statistics about your dataset. Since we did not annotate many frames the majority of keypoints will be unnanotated.
+If everything looks like shown below you can click the <span style="color:#63a31f">Create Trainingset</span> button.
+
+<img class="modalImg center" id="Trainingset_Exporter" src="docs/assets/Trainingset_Exporter.png" alt="Trainingset Export Menu">
+<script>create_modal("Trainingset_Exporter");</script>
+
+You should now have a trainingset that has the same structure as the one you used to train your first network.
+
+:tada: That's it! Now it's time to get started with training a model on your own data. If you want to learn more about our toolbox we strongly suggest you have a look at our [Manual](/jarvis-docs/2021-10-29-manual.html). There you will find detailed instructions on every step of building a 3D motion capture setup with JARVIS.
