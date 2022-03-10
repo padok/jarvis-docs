@@ -4,7 +4,12 @@ author: Timo Hueser
 date: 2021-10-28
 layout: post
 ---
-
+<div id="Modal" class="modal">
+ <span class="close">&times;</span>
+ <img class="modal-content" id="modalImg">
+ <div id="caption"></div>
+</div>
+<script src="{{site.baseurl}}/docs/assets/js/image_modal.js"> </script>
 
 <center>
 <span style="color:#63a31f;font-size:18px"><b>This Guide is very much work in progress!</b></span><br>
@@ -24,6 +29,7 @@ One additional note, JARVIS uses two different formats for the annotated data. T
 Let's start by playing around with our provided example so you can familiarize with our software and get a better feel for the task and the workflow.<br>
 The example data we're working with in this tutorial are recordings of one of our monkeys - his name is Ralph - performing a simple grasping task in our 12 camera setup. Your task is to track his hand while he is enjoying a variety of fruits we hand him.
 We'll split the task into four steps:
+
 1. Installing our [Pytorch Toolbox](https://www.lensation.de/calculator.html) and downloading the example recordings.
 2. Visualizing the provided annotations, both in 2D and 3D.
 3. Training the entire network stack.
@@ -72,7 +78,8 @@ With that out of the way the only thing left to do is downloading the example re
 Before we dive into training JARVIS to track anything it is always a good idea to have a look at the trainingset your are using, both in 2D and in 3D.<br>
 To do this first launch the JARVIS streamlit dashboard as described above. Once the GUI pops up in your browser you can select the Example_Project from the drop-down menu and then navigate to the visualization menu.
 
-<img src="docs/assets/gifs/dataset_vis.gif" class="center">
+<img class="modalImg center" id="Dataset_Vis" src="docs/assets/gifs/dataset_vis.gif" alt="kjfbdskfsdfsdkffjssb">
+<script>create_modal("Dataset_Vis");</script>
 
 As you can see there are a bunch of option for visualizing both your predictions and your trainingset. You can see how that looks like above, but feel free to play around with it a bit to familiarize yourself with the data you are working with. Once you start working with your own data, checking your trainingset before training is really important to ensure there was no problem when creating it and your network will get the input you expect it to get.
 
@@ -107,11 +114,13 @@ If you haven't already you should now download our [example recordings](). Once 
 4. **SkeletonPreset** lets you select a skeleton from a number of presets. For the example you should select the 'Hand' preset. Leaving it at 'None' will use the default colorscheme, without connecting any joints.
 5. **Start Frame & Number Frames** let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000, to predict until the end of the recording set it to -1.
 
-<img src="docs/assets/Training_Screenshot.png" class="center">
+<img class="modalImg center" id="Training_Screenshot" src="docs/assets/Training_Screenshot.png" alt="kjfbdskfsdfsdkffjb">
+<script>create_modal("Training_Screenshot");</script>
+
 
 Once all those settings are correct, press the predict button and wait for the progress bar to fill up. Once the process is finished you will find 'Videos' folder containing your recordings overlaid with the predicted keypoints as well as a 'data3D.csv' file that contains the 3D coordinates for every point in time.
 
-
+<hr style="border:2px solid gray">
 ## Creating Your Own Trainingset from the Example Recordings
 Now that you know what a trainingset looks like and how you can use it to train the network we'll take a step back and cover the process of creating this trainingset from a multi-camera recording. Like before we'll split this task into smaller steps:
 1. Installing the AnnotationTool.
@@ -126,16 +135,8 @@ If everything goes according to plan you'll end up with a trainingset very simil
 If you are using Windows, MacOS all you have to do is got to our [downloads page]() and grab the installer for your OS. If you are running a different Linux distribution you will have to build the AnnotationTool yourself. There is a guide on how to do that on its [GitHub page](https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool).
 Once you install the tool you will be greeted with a home screen that looks like this:
 
-<img src="docs/assets/AnnotationTool_HomeScreen.png" class="center">
-
-
-<img id="myImg" src="docs/assets/AnnotationTool_HomeScreen.png" alt="Snow" style="width:100%;max-width:300px">
-<div id="myModal" class="modal">
- <span class="close">&times;</span>
- <img class="modal-content" id="img01">
- <div id="caption"></div>
-</div>
-<script src="{{site.baseurl}}/docs/assets/js/image_modal.js"> </script>
+<img class="modalImg center" id="HomeScreenImg" src="docs/assets/AnnotationTool_HomeScreen.png" alt="Test">
+<script>create_modal("HomeScreenImg");</script>
 
 
 <!-- :tada: That's it! Now it's time to get started with training a model on your own data. If you want to learn more about our toolbox we strongly suggest you have a look at our [Manual](/jarvis-docs/2021-10-29-manual.html). There you will find detailed instructions on every step of building a 3D motion capture setup with JARVIS. -->
