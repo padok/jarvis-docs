@@ -5,84 +5,6 @@ date: 2021-10-28
 layout: post
 ---
 
-<style>
-input[type='checkbox'] {
-  display: none;
-}
-
-.wrap-collabsible {
-  margin: 1.2rem 0;
-}
-
-.lbl-toggle {
-  display: block;
-  font-weight: bold;
-  font-family: monospace;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 1rem;
-  color: #DDD;
-  background: #2064a4ff;
-  cursor: pointer;
-  border-radius: 7px;
-  transition: all 0.25s ease-out;
-}
-
-.lbl-toggle:hover {
-  color: #FFF;
-}
-.lbl-toggle::before {
-  content: ' ';
-  display: inline-block;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid currentColor;
-  vertical-align: middle;
-  margin-right: .7rem;
-  transform: translateY(-2px);
-  transition: transform .2s ease-out;
-}
-
-.toggle:checked+.lbl-toggle::before {
-  transform: rotate(90deg) translateX(-3px);
-}
-
-.collapsible-content {
-  max-height: 0px;
-  overflow: hidden;
-  transition: max-height .25s ease-in-out;
-}
-
-.toggle:checked + .lbl-toggle + .collapsible-content {
-  max-height: 400px;
-}
-
-.toggle:checked+.lbl-toggle {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.collapsible-content .content-inner {
-  background: #2064a450;
-  border-bottom: 0px solid #2064a450;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  padding: .5rem 1rem;
-}
-
-.collapsible-content p {
-  margin-bottom: 0;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 85%;
-}
-
-</style>
 
 <center>
 <span style="color:#63a31f;font-size:18px"><b>This Guide is very much work in progress!</b></span><br>
@@ -200,7 +122,20 @@ Now that you know what a trainingset looks like and how you can use it to train 
 
 If everything goes according to plan you'll end up with a trainingset very similar to the one you used in the previous part of the tutorial.
 
+### 1. Installing the AnnotationTool
+If you are using Windows, MacOS all you have to do is got to our [downloads page]() and grab the installer for your OS. If you are running a different Linux distribution you will have to build the AnnotationTool yourself. There is a guide on how to do that on its [GitHub page](https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool).
+Once you install the tool you will be greeted with a home screen that looks like this:
+
+<img src="docs/assets/AnnotationTool_HomeScreen.png" class="center">
 
 
+<img id="myImg" src="docs/assets/AnnotationTool_HomeScreen.png" alt="Snow" style="width:100%;max-width:300px">
+<div id="myModal" class="modal">
+ <span class="close">&times;</span>
+ <img class="modal-content" id="img01">
+ <div id="caption"></div>
+</div>
+<script src="docs/assets/js/image_modal.js"> </script>
 
-:tada: That's it! Now it's time to get started with training a model on your own data. If you want to learn more about our toolbox we strongly suggest you have a look at our [Manual](/jarvis-docs/2021-10-29-manual.html). There you will find detailed instructions on every step of building a 3D motion capture setup with JARVIS.
+
+<!-- :tada: That's it! Now it's time to get started with training a model on your own data. If you want to learn more about our toolbox we strongly suggest you have a look at our [Manual](/jarvis-docs/2021-10-29-manual.html). There you will find detailed instructions on every step of building a 3D motion capture setup with JARVIS. -->
