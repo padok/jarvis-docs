@@ -12,6 +12,8 @@ layout: post
  <div id="caption"></div>
 </div>
 <script src="{{site.baseurl}}/docs/assets/js/image_modal.js"> </script>
+<script src="{{site.baseurl}}/docs/assets/js/tab.js"> </script>
+
 
 ![Alt Text](docs/assets/overview.svg)
 
@@ -42,8 +44,8 @@ We'll split the task into four steps:
 
 
 ### 1. Installing the Toolbox and Downloading the Data
-First let's take care of setting up the software. Make sure you have a version of [Anaconda](https://www.anaconda.com/) installed and your PC has a Nvidia GPU with working CUDA drivers installed.
-After that there are only a few simple steps you need to take to install the toolbox:
+First let's take care of setting up the software. Make sure you have a version of [Anaconda](https://www.anaconda.com/) installed. If you want to train networks also make sure that your PC has a Nvidia GPU with working CUDA drivers installed.<br>
+There are only a few simple steps you need to take to install the toolbox:
 - Download the python package. To do this open up a terminal and run:
 ```
 git clone https://github.com/JARVIS-MoCap/JARVIS-HybridNet.git && cd JARVIS-HybridNet
@@ -75,25 +77,55 @@ pip install -e .
 jarvis hello
 ```
 
-With that out of the way the only thing left to do is downloading the example recordings by clicking [here](). To make everything work right out of the box you should put the 'Example Recordings' folder into your main JARVIS-HybridNet directory.<br>
+With that out of the way the only thing left to do is downloading the example recordings by clicking [here]().<br>
 <br>
-:tada: Congratulations, you are all set up now! To launch our handy streamlit GUI interface just open a terminal, activate the conda environment by running `conda activate jarvis` and type `jarvis launch`.
+:tada: Congratulations, you are all set up now! To launch our handy streamlit GUI interface just open a terminal, activate the conda environment by running `conda activate jarvis` and type `jarvis launch`.<br> Alternatively you can also interact with jarvis through the command line. To do this activate the conda environment and then run `jarvis launch-cli`. The following sections give you the option to switch between instructions for both methods by selecting the respective tabs.
 <br>
+
 
 
 ### 2. Visualizing the Example Trainingset
 Before we dive into training JARVIS to track anything it is always a good idea to have a look at the trainingset your are using, both in 2D and in 3D.<br>
-To do this first launch the JARVIS streamlit dashboard as described above. Once the GUI pops up in your browser you can select the Example_Project from the drop-down menu and then navigate to the visualization menu.
+
+<div class="tab">
+<button class="tablinks" onclick="openTab(event, 'GUI1')" id="GUIButton1">Graphical Interface</button>
+  <button class="tablinks" onclick="openTab(event, 'CLI1')">Command-Line Interface</button>
+</div>
+
+<div id="GUI1" class="tabcontent">
+To do this using the streamlit dashboard first launch the JARVIS streamlit dashboard as described above by running `jarvis launch`. Once the GUI pops up in your browser you can select the Example_Project from the drop-down menu and then navigate to the visualization menu.<br><br>
 
 <img class="modalImg center" id="Dataset_Vis" src="docs/assets/gifs/dataset_vis.gif" alt="How to use the dataset visualization feature">
 <script>create_modal("Dataset_Vis");</script>
 
-As you can see there are a bunch of option for visualizing both your predictions and your trainingset. You can see how that looks like above, but feel free to play around with it a bit to familiarize yourself with the data you are working with. Once you start working with your own data, checking your trainingset before training is really important to ensure there was no problem when creating it and your network will get the input you expect it to get.
 <br>
+As you can see there are a bunch of option for visualizing both your predictions and your trainingset. You can see how that looks like above, but feel free to play around with it a bit to familiarize yourself with the data you are working with. <br>
+Once you start working with your own data, checking your trainingset before training is really important to ensure there was no problem when creating it and your network will get the input you expect it to get.
+<br>
+</div>
+
+<div id="CLI1" class="tabcontent">
+To do this using the command line interface first launch it by running 'jarvis launch-cli'. You will see a menu appear in your terminal that you can navigate using your arrow keys. To visualize your dataset select the <span style="color:#63a31f">Visualize</span> menu and then pick either the <span style="color:#63a31f">Dataset2D</span> or the <span style="color:#63a31f">Dataset2D</span> option.<br><br>
+
+<img class="modalImg center" id="cli_vis" src="docs/assets/gifs/cli_vis.gif" alt="Using the command line interface to visualize the trainingset">
+<script>create_modal("cli_vis");</script>
+
+<br>
+To visualize the example trainingset select the 'Example_Project' and the 'Hand' skeleton preset. Other than that feel free to play around with the different options.You can cycle through all the available frames by pressing any key. Pressing 'q' or 'esc' will take you back to the Visualize menu.<br>
+Once you start working with your own data, checking your trainingset before training is really important to ensure there was no problem when creating it and your network will get the input you expect it to get.
+</div>
+
+<script>
+document.getElementById("GUIButton1").click();
+</script>
+
 
 
 ### 3. Training the Entire Network
 Now that you know what our data looks like it is time to train the network stack. Thankfully this is really easy, all you need to do is to navigate to the <span style="color:#63a31f">Train Full</span> menu and press train as shown below. If everything works correctly you should see two progress bars as well as a plot showing the training progress appear. Depending on your GPU training might take anywhere between an hour and a day, so a bit of patience is required at this point. If you don't want to wait you can also continue with our pretrained weights of course.
+
+<img class="modalImg center" id="Training_Screenshot" src="docs/assets/Training_Screenshot.png" alt="Loss and accuracy statistics during training">
+<script>create_modal("Training_Screenshot");</script>
 
 <div class="wrap-collabsible">
   <input id="collapsible" class="toggle" type="checkbox">
@@ -122,10 +154,6 @@ If you haven't already you should now download our [example recordings](). Once 
 - **Weights for CenterDetect / HybridNet** lets you specify which weights you want to use. If you have trained models yourself you can leave them at 'latest'. If you didn't train the network yourself you'll have to put the path of the pretrained weights here. They can be found in the 'pretrained' directory inside your 'JARVIS-Hybridnet' folder.
 - **SkeletonPreset** lets you select a skeleton from a number of presets. For the example you should select the 'Hand' preset. Leaving it at 'None' will use the default colorscheme, without connecting any joints.
 - **Start Frame & Number Frames** let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000, to predict until the end of the recording set it to -1.
-
-<img class="modalImg center" id="Training_Screenshot" src="docs/assets/Training_Screenshot.png" alt="Loss and accuracy statistics during training">
-<script>create_modal("Training_Screenshot");</script>
-
 
 Once all those settings are correct, press the predict button and wait for the progress bar to fill up. Once the process is finished you will find 'Videos' folder containing your recordings overlaid with the predicted keypoints as well as a 'data3D.csv' file that contains the 3D coordinates for every point in time.
 
