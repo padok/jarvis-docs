@@ -17,17 +17,13 @@ layout: post
 
 ![Alt Text](docs/assets/overview.svg)
 
-<center>
-<span style="color:#63a31f;font-size:18px"><b>This Guide is very much work in progress!</b></span><br><br>
-</center>
-
 <!-- <center>
 <span style="color:#63a31f;font-size:18px"><b>This Guide is also available as a series of videos on Youtube!</b></span><br>
 <iframe width="336" height="189" src="https://www.youtube.com/embed/videoseries?list=PLHRdrn7aySLfxchhU8X_aTkcDVRMlwvPP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center> -->
 
-Welcome to our Getting Started Guide! This guide will teach you how to set up the three different parts of our toolbox and how to work with our example data. This will help you get an idea of all the steps required to build and use a 3D markerless motion capture setup. After working through this guide you will be ready to work through our [Manual](/jarvis-docs/2021-10-29-manual.html) and learn all the things neccessary to build you own motion capture system from scratch.\
-Note that this Guide is somewhat back to front. You will learn how to work with annotated data before we show you how to actually annotate it. We are not doing that to confuse you but because it helps to get a feel for what you are trying to achieve before you spend hours annotating images.<br>
+Welcome to our Getting Started Guide! This guide will teach you how to set up the three different parts of our toolbox and how to work with our example data. This will help you get an idea of all the steps required to build and use a 3D markerless motion capture setup. After working through this guide you will be ready to have a look at our [Manual](/jarvis-docs/2021-10-29-manual.html) and learn all the things necessary to build you own motion capture system from scratch.\
+Note that this Guide is somewhat back to front. You will learn how to work with annotated data before we show you how to actually annotate it.<br>
 One additional note, JARVIS uses two different formats for the annotated data. The one you will work with first is called the <span style="color:#63a31f">trainingset</span>. A trainingset is a finished set of annotations in the right format to be used by the JARVIS Pytorch module. The second one is called a <span style="color:#63a31f">dataset</span>, this is the format that is used by the AnnotationTool. We know this can be a bit confusing, but the two different formats are neccessary to make some features of JARVIS work.
 
 <hr style="border:2px solid gray">
@@ -72,11 +68,6 @@ pip install -U setuptools==59.5.0
 pip install -e .
 ```
 
-- To test if the install was successful run:
-```
-jarvis hello
-```
-
 With that out of the way the only thing left to do is downloading the example recordings by clicking [here]().<br>
 <br>
 :tada: Congratulations, you are all set up now! To launch our handy streamlit GUI interface just open a terminal, activate the conda environment by running `conda activate jarvis` and type `jarvis launch`.<br> Alternatively you can also interact with jarvis through the command line. To do this activate the conda environment and then run `jarvis launch-cli`. The following sections give you the option to switch between instructions for both methods by selecting the respective tabs.
@@ -100,7 +91,6 @@ To do this using the streamlit dashboard first launch the JARVIS streamlit dashb
 
 <br>
 As you can see there are a bunch of option for visualizing both your predictions and your trainingset. You can see how that looks like above, but feel free to play around with it a bit to familiarize yourself with the data you are working with. <br>
-Once you start working with your own data, checking your trainingset before training is really important to ensure there was no problem when creating it and your network will get the input you expect it to get.
 <br>
 </div>
 
@@ -112,8 +102,9 @@ To do this using the command line interface first launch it by running 'jarvis l
 
 <br>
 To visualize the example trainingset select the 'Example_Project' and the 'Hand' skeleton preset. Other than that feel free to play around with the different options.You can cycle through all the available frames by pressing any key. Pressing 'q' or 'esc' will take you back to the Visualize menu.<br>
-Once you start working with your own data, checking your trainingset before training is really important to ensure there was no problem when creating it and your network will get the input you expect it to get.
 </div>
+
+Once you start working with your own data, checking your trainingset before training is really important to ensure there was no problem when creating it and your network will get the input you expect it to get.
 
 <script>
 document.getElementById("GUIButton1").click();
@@ -152,7 +143,6 @@ Now that you know what our data looks like it is time to train the network stack
 If you haven't already you should now download our [example recordings](). Once you have those saved on your computer all you need to do is launch the JARVIS GUI and navigate to the <span style="color:#63a31f">Predict3D</span> menu as shown below. Here you'll have to specify a couple of things:
 - **Path of recording directory** is the path of the example recording you just downloaded, it should include the 'Example_Recording' directory.
 - **Weights for CenterDetect / HybridNet** lets you specify which weights you want to use. If you have trained models yourself you can leave them at 'latest'. If you didn't train the network yourself you'll have to put the path of the pretrained weights here. They can be found in the 'pretrained' directory inside your 'JARVIS-Hybridnet' folder.
-- **SkeletonPreset** lets you select a skeleton from a number of presets. For the example you should select the 'Hand' preset. Leaving it at 'None' will use the default colorscheme, without connecting any joints.
 - **Start Frame & Number Frames** let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000, to predict until the end of the recording set it to -1.
 
 Once all those settings are correct, press the predict button and wait for the progress bar to fill up. Once the process is finished you will find 'Videos' folder containing your recordings overlaid with the predicted keypoints as well as a 'data3D.csv' file that contains the 3D coordinates for every point in time.
