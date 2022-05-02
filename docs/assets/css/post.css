@@ -201,3 +201,33 @@ input[type='checkbox'] {
   /* border: 1px solid #ccc;
   border-top: none; */
 }
+
+/* Style the tab content */
+.tabcontent2 {
+	background-color: #171a24;
+  display: none;
+  padding: 6px 8px;
+	border-radius: 0px 0px 10px 10px;
+  /* border: 1px solid #ccc;
+  border-top: none; */
+}
+
+/* Style the tab content */
+.tabcontent3 {
+	background-color: #171a24;
+  display: none;
+  padding: 6px 8px;
+	border-radius: 0px 0px 10px 10px;
+  /* border: 1px solid #ccc;
+  border-top: none; */
+}
+
+/* Style the tab content */
+.tabcontent4 {
+	background-color: #171a24;
+  display: none;
+  padding: 6px 8px;
+	border-radius: 0px 0px 10px 10px;
+  /* border: 1px solid #ccc;
+  border-top: none; */
+}

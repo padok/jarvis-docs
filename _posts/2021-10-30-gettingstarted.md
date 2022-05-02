@@ -30,7 +30,7 @@ One additional note, JARVIS uses two different formats for the annotated data. T
 ## Exploring the Provided Example Trainingset
 Let's start by playing around with our provided example so you can familiarize with our software and get a better feel for the task and the workflow.<br>
 The example data we're working with in this tutorial are recordings of one of our monkeys - his name is Ralph - performing a simple grasping task in our 12 camera setup. Your task is to track his hand while he is enjoying a variety of fruits we hand him.
-We'll split the task into four steps:
+we will split the task into four steps:
 
 1. <span style="color:#63a31f"><b>Installing</b></span> our [Pytorch Toolbox](https://www.lensation.de/calculator.html) and downloading the example recordings.
 2. <span style="color:#63a31f"><b>Visualizing</b></span> the provided annotations, both in 2D and 3D.
@@ -95,7 +95,7 @@ As you can see there are a bunch of option for visualizing both your predictions
 </div>
 
 <div id="CLI1" class="tabcontent">
-To do this using the command line interface first launch it by running 'jarvis launch-cli'. You will see a menu appear in your terminal that you can navigate using your arrow keys. To visualize your dataset select the <span style="color:#63a31f">Visualize</span> menu and then pick either the <span style="color:#63a31f">Dataset2D</span> or the <span style="color:#63a31f">Dataset2D</span> option.<br><br>
+To do this using the command line interface first launch it by running <span style="color:#63a31f">'jarvis launch-cli'</span>. You will see a menu appear in your terminal that you can navigate using your arrow keys. To visualize your dataset select the <span style="color:#63a31f">Visualize</span> menu and then pick either the <span style="color:#63a31f">Dataset2D</span> or the <span style="color:#63a31f">Dataset2D</span> option.<br><br>
 
 <img class="modalImg center" id="cli_vis" src="docs/assets/gifs/cli_vis.gif" alt="Using the command line interface to visualize the trainingset">
 <script>create_modal("cli_vis");</script>
@@ -113,10 +113,27 @@ document.getElementById("GUIButton1").click();
 
 
 ### 3. Training the Entire Network
-Now that you know what our data looks like it is time to train the network stack. Thankfully this is really easy, all you need to do is to navigate to the <span style="color:#63a31f">Train Full</span> menu and press train as shown below. If everything works correctly you should see two progress bars as well as a plot showing the training progress appear. Depending on your GPU training might take anywhere between an hour and a day, so a bit of patience is required at this point. If you don't want to wait you can also continue with our pretrained weights of course.
+Now that you know what our data looks like it is time to train the network stack.
+
+<div class="tab">
+<button class="tablinks2" onclick="openTab2(event, 'GUI2')" id="GUIButton2">Graphical Interface</button>
+  <button class="tablinks2" onclick="openTab2(event, 'CLI2')" id="CLIButton2">Command-Line Interface</button>
+</div>
+
+<div id="GUI2" class="tabcontent2">
+Using our GUI this is really easy, all you need to do is to navigate to the <span style="color:#63a31f">Train Full</span> menu and press train as shown below. If everything works correctly you should see two progress bars as well as a plot showing the training progress appear. Depending on your GPU training might take up to a few hours, so a bit of patience is required at this point. If you don't want to wait you can also continue with our pretrained weights of course.
 
 <img class="modalImg center" id="Training_Screenshot" src="docs/assets/Training_Screenshot.png" alt="Loss and accuracy statistics during training">
 <script>create_modal("Training_Screenshot");</script>
+</div>
+
+<div id="CLI2" class="tabcontent2">
+ The CLI makes this very easy. All you need to do is launch the interface by running <span style="color:#63a31f">'jarvis launch-cli'</span>, select the <span style="color:#63a31f">Train</span> menu and then run <span style="color:#63a31f">Train</span> as shown below. If everything works correctly you should see a progress bar appearing. Depending on your GPU training might take up to a few hours, so a bit of patience is required at this point. If you don't want to wait you can also continue with our pretrained weights of course.
+</div>
+
+<script>
+document.getElementById("GUIButton2").click();
+</script>
 
 <div class="wrap-collabsible">
   <input id="collapsible" class="toggle" type="checkbox">
@@ -140,24 +157,83 @@ Now that you know what our data looks like it is time to train the network stack
 
 
 ### 4. Predicting Poses for the Example Recording
-If you haven't already you should now download our [example recordings](). Once you have those saved on your computer all you need to do is launch the JARVIS GUI and navigate to the <span style="color:#63a31f">Predict3D</span> menu as shown below. Here you'll have to specify a couple of things:
-- **Path of recording directory** is the path of the example recording you just downloaded, it should include the 'Example_Recording' directory.
-- **Weights for CenterDetect / HybridNet** lets you specify which weights you want to use. If you have trained models yourself you can leave them at 'latest'. If you didn't train the network yourself you'll have to put the path of the pretrained weights here. They can be found in the 'pretrained' directory inside your 'JARVIS-Hybridnet' folder.
-- **Start Frame & Number Frames** let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000, to predict until the end of the recording set it to -1.
+If you haven't already you should now download our [example recording]().
 
-Once all those settings are correct, press the predict button and wait for the progress bar to fill up. Once the process is finished you will find 'Videos' folder containing your recordings overlaid with the predicted keypoints as well as a 'data3D.csv' file that contains the 3D coordinates for every point in time.
+<div class="tab">
+<button class="tablinks3" onclick="openTab3(event, 'GUI3')" id="GUIButton3">Graphical Interface</button>
+  <button class="tablinks3" onclick="openTab3(event, 'CLI3')" id="CLIButton3">Command-Line Interface</button>
+</div>
 
+<div id="GUI3" class="tabcontent3">
+Once you have the example recording saved on your computer all you need to do is launch the JARVIS GUI and navigate to the <span style="color:#63a31f">Predict3D</span> menu as shown below. Here you will have to specify a couple of things:
+<ul>
+<li><b>Path of recording directory</b> is the path of the example recording you just downloaded, it should include the 'Example_Recording' directory.</li>
+<li><b>Weights for CenterDetect / HybridNet</b> lets you specify which weights you want to use. If you have trained models yourself you can leave them at 'latest'. If you didn't train the network yourself you will have to put the path of the pretrained weights here. They can be found in the 'pretrained' directory inside your 'JARVIS-Hybridnet' folder.</li>
+<li><b>Start Frame & Number Frames</b> let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000. To predict until the end of the recording set it to -1.</li>
+</ul>
+
+Once all those settings are correct, press the  <span style="color:#63a31f">Predict</span> button and wait for the progress bar to fill up as shown below.
+</div>
+
+<div id="CLI3" class="tabcontent3">
+Once you have the example recording saved on your computer all you need to do is launch the JARVIS CLI and select <span style="color:#63a31f">Predict3D</span> in the <span style="color:#63a31f">Predict</span> menu as shown below. Here you will have to specify a couple of things:
+<ul>
+<li>The <b>Recordings Path</b> is the path of the example recording you just downloaded, it should include the 'Example_Recording' directory.</li>
+<li>Select <span style="color:#63a31f">No</span> for using <b>TensorRT acceleration</b> for now. If you installed the optional TensorRT packages this lets speed up predictions using NVIDIAs <a href="https://developer.nvidia.com/tensorrt">TensorRT</a> library. Compiling the TRT models takes quite some time though.</li>
+<li>If you have trained models yourself you can use the most recently saved weights. Otherwise you will have to specify the path of the pretrained weights for the CenterDetect and the HybridNet networks here. They can be found in the 'pretrained' directory inside your 'JARVIS-Hybridnet' folder.</li>
+<li> Select <span style="color:#63a31f">No</span> when asked if you want to use a <b>calibration that is not in the trainingset</b>.</li>
+<li> To quickly get some results also select <span style="color:#63a31f">No</span> when asked wether you want to <b>predict for the whole video</b></li>
+<li><b>Start Frame & Number of Frames</b> let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000, to predict until the end of the recording set it to -1.</li>
+</ul>
+
+After answering all the prompts you should see a progress bar filling up as shown below.
+</div>
+
+Once the process is finished you will find a directory with a current timestamp in the projects folder under <span style="color:#63a31f">predictions</span>. That folder contains a 'data3D.csv' file that contains the 3D coordinates and their corresponding confidences for every point in time. The directory also contains a '.yaml' file that holds some information necessary for creating videos from your predictions.
+
+<script>
+document.getElementById("GUIButton3").click();
+</script>
+
+### 5. Creating Annotated Videos from Your Predictions
+The easiest way to check the quality of the predictions you just created is looking at annotated videos. For the 3D predictions those videos are created by projecting the 3D coordinates of the keypoints back into all available camera perspectives.  
+
+<div class="tab">
+<button class="tablinks4" onclick="openTab4(event, 'GUI4')" id="GUIButton4">Graphical Interface</button>
+<button class="tablinks4" onclick="openTab4(event, 'CLI4')" id="CLIButton4">Command-Line Interface</button>
+</div>
+
+<div id="GUI4" class="tabcontent4">
+In the GUI navigate to the <span style="color:#63a31f">Visualization</span> menu as shown below. Here the right prediction directory should already be selected. If you want you can remove or add cameras from the list of cameras for which you want to create annotated videos. You can now click <span style="color:#63a31f">Create Video</span> as shown below. <br>
+If everything is set correctly you should find a directory containing your freshly labeled videos in the project directory after the progress bar is filled up.  
+</div>
+
+<div id="CLI4" class="tabcontent4">
+Navigate to the <span style="color:#63a31f">Visualize Menu</span> after launching the JARVIS CLI. After selecting <span style="color:#63a31f">Create Videos 3D</span> and the Example_Project you should be able to select the Predictions_3D directory that you created in the last step. If you want you can now select and deselect all the cameras that will be used to create your annotated videos. <br>
+If everything is set correctly you should find a directory containing your freshly labeled videos in the project directory after the progress bar is filled up.
+</div>
+
+Your videos should now look very similar to the ones shown here:
+
+
+Your 'Example_Project' directory will now have the following structure:
+
+This project structure will be the same for the projects you create using your own data. All of it is auto-generated by the toolbox while you use it, but don't be shy to manually modify it, e.g. when copying models or config files between projects.  
+
+<script>
+document.getElementById("GUIButton4").click();
+</script>
 
 <hr style="border:2px solid gray">
 ## Creating Your Own Trainingset from the Example Recordings
-Now that you know what a trainingset looks like and how you can use it to train the network we'll take a step back and cover the process of creating this trainingset from a multi-camera recording. Like before we'll split this task into smaller steps:
+Now that you know what a trainingset looks like and how you can use it to train the network we will take a step back and cover the process of creating this trainingset from a multi-camera recording. Like before we will split this task into smaller steps:
 1. <span style="color:#63a31f"><b>Installing</b></span> the AnnotationTool.
 2. <span style="color:#63a31f"><b>Extracting</b></span> a dataset from the Example Recording.
 3. Creating a set of <span style="color:#63a31f"><b>Calibration</b></span> Parameters.
 4. <span style="color:#63a31f"><b>Annotating</b></span> a Frameset.
 5. <span style="color:#63a31f"><b>Exporting</b></span> the dataset as a trainingset.
 
-If everything goes according to plan you'll end up with a trainingset very similar to the one you used in the previous part of the tutorial.
+If everything goes according to plan you will end up with a trainingset very similar to the one you used in the previous part of the tutorial.
 <br>
 
 
@@ -171,12 +247,12 @@ Once you install the tool you will be greeted with a home screen that looks like
 
 
 ### 2. Extracting a Dataset from the Example Recording
-Clicking on the first item in the list on the homescreen will open up the dataset extraction menu. This will allow you to extract framesets from your recordings that you will subsequently annotate. For this tutorial we'll stick to the basics and use the fastest and quickest way of extracting a handful of framesets. Definitely check out the relevant [section]() in our Manual to learn all the details about how to create a dataset that is as representative of your entire recording as possible.
+Clicking on the first item in the list on the homescreen will open up the dataset extraction menu. This will allow you to extract framesets from your recordings that you will subsequently annotate. For this tutorial we will stick to the basics and use the fastest and quickest way of extracting a handful of framesets. Definitely check out the relevant [section]() in our Manual to learn all the details about how to create a dataset that is as representative of your entire recording as possible.
 First let's go through the options in the <span style="color:#63a31f">Configuration</span> section.
 - **New Dataset Name** is the name of the dataset you're going to create.
 - **New Dataset Path** is the directory in which your new dataset will be saved.
 - **Framesets to extract per Segment** is the number of framesets the tool will create, you can leave it at the default of 10 for this example.
-- **Sampling Method** is the method the tool uses to decide which frames in your recording to use. <span style="color:#63a31f">kmeans</span> is the method you should use for your real datasets, but for this tutorial we'll use  <span style="color:#63a31f">uniform</span> to make the extraction process a bit quicker.
+- **Sampling Method** is the method the tool uses to decide which frames in your recording to use. <span style="color:#63a31f">kmeans</span> is the method you should use for your real datasets, but for this tutorial we will use <span style="color:#63a31f">uniform</span> to make the extraction process a bit quicker.
 
 Next up is the <span style="color:#63a31f">Recordings</span> section. Just click <span style="color:#63a31f">Add Recording</span> and navigate to the 'Example_Recording' directory and click <span style="color:#63a31f">Open</span>.<br>
 The last thing left to do is to tell the tool the names of all the <span style="color:#63a31f">Entities</span> and <span style="color:#63a31f">Keypoints</span> you want to annotate. Entities refers to the animal/object you are tracking. (Note: The AnnotationTool supports annotating multiple entities in one dataset, but the rest of our toolbox currently does not). For our example you can load the 'Hand' preset by clicking <span style="color:#63a31f">Load Preset</span>.
@@ -195,8 +271,8 @@ Like before let's first go through the options in the <span style="color:#63a31f
 - **Calibration Set Name** is the name of the set of calibration parameters you're going to create.
 - **Calibration Set Savepath** is the directory in which your new calibration parameters will be saved.
 - **Separate Recordings for Intrinsics** can be set to no if you want to use your extrinsic recordings for intrinsics calibration. This is not recommended, see the manual for details.
-- **Intrinsics Folder Path** is the directory that contains all the recordings for intrinsic calibration (you'll find it inside the downloaded 'Calibration_Example' directory).  
-- **Extrinsics Folder Path** is the directory that contains all the recordings for extrinsics calibration (you'll find it inside the downloaded 'Calibration_Example' directory).
+- **Intrinsics Folder Path** is the directory that contains all the recordings for intrinsic calibration (you will find it inside the downloaded 'Calibration_Example' directory).  
+- **Extrinsics Folder Path** is the directory that contains all the recordings for extrinsics calibration (you will find it inside the downloaded 'Calibration_Example' directory).
 
 Calibrating on your own data might require you to change some settings in the <span style="color:#63a31f">Calibration Settings</span> and the <span style="color:#63a31f">Checkerboard Layout</span> sections as well. For this example the defaults are already correct though, so you can leave all those settings untouched.
 
