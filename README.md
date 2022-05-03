@@ -2,7 +2,7 @@ This is a fork of the jekyll-gitbook theme, for the documentation of the JARVIS 
 
 ## Instructions for running jekyll locally:
 
-- nstall ruby with <code>sudo apt install ruby</code>
+- Install ruby with <code>sudo apt install ruby</code>
 - install other dependencies with <code>sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev</code>
 - make ruby install stuff locally with
   ~~~
