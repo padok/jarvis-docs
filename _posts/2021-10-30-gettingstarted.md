@@ -32,7 +32,7 @@ Let's start by playing around with our provided example so you can familiarize w
 The example data we're working with in this tutorial are recordings of one of our monkeys - his name is Ralph - performing a simple grasping task in our 12 camera setup. Your task is to track his hand while he is enjoying a variety of fruits we hand him.
 we will split the task into four steps:
 
-1. <span style="color:#63a31f"><b>Installing</b></span> our [Pytorch Toolbox](https://www.lensation.de/calculator.html) and downloading the example recordings.
+1. <span style="color:#63a31f"><b>Installing</b></span> our **Pytorch Toolbox** and downloading the example recordings.
 2. <span style="color:#63a31f"><b>Visualizing</b></span> the provided annotations, both in 2D and 3D.
 3. <span style="color:#63a31f"><b>Training</b></span> the entire network stack.
 4. Usig your freshly trained network to <span style="color:#63a31f"><b>track</b></span> Ralph's hand in the example recording.
@@ -68,7 +68,7 @@ pip install -U setuptools==59.5.0
 pip install -e .
 ```
 
-With that out of the way the only thing left to do is downloading the example recordings by clicking [here]().<br>
+With that out of the way the only thing left to do is downloading the example recordings by clicking [here](https://zenodo.org/record/6515085/files/Example_Recording.zip?download=1).<br>
 <br>
 :tada: Congratulations, you are all set up now! To launch our handy streamlit GUI interface just open a terminal, activate the conda environment by running `conda activate jarvis` and type `jarvis launch`.<br> Alternatively you can also interact with jarvis through the command line. To do this activate the conda environment and then run `jarvis launch-cli`. The following sections give you the option to switch between instructions for both methods by selecting the respective tabs.
 <br>
@@ -86,7 +86,7 @@ Before we dive into training JARVIS to track anything it is always a good idea t
 <div id="GUI1" class="tabcontent">
 To do this using the streamlit dashboard first launch the JARVIS streamlit dashboard as described above by running `jarvis launch`. Once the GUI pops up in your browser you can select the Example_Project from the drop-down menu and then navigate to the visualization menu.<br><br>
 
-<img class="modalImg center" id="Dataset_Vis" src="docs/assets/gifs/dataset_vis.gif" alt="How to use the dataset visualization feature">
+<img class="modalImg center" id="Dataset_Vis" src="docs/assets/gifs/dataset_vis_gui.gif" alt="How to use the dataset visualization feature">
 <script>create_modal("Dataset_Vis");</script>
 
 <br>
@@ -97,11 +97,12 @@ As you can see there are a bunch of option for visualizing both your predictions
 <div id="CLI1" class="tabcontent">
 To do this using the command line interface first launch it by running <span style="color:#63a31f">'jarvis launch-cli'</span>. You will see a menu appear in your terminal that you can navigate using your arrow keys. To visualize your dataset select the <span style="color:#63a31f">Visualize</span> menu and then pick either the <span style="color:#63a31f">Dataset2D</span> or the <span style="color:#63a31f">Dataset2D</span> option.<br><br>
 
-<img class="modalImg center" id="cli_vis" src="docs/assets/gifs/cli_vis.gif" alt="Using the command line interface to visualize the trainingset">
+<img class="modalImg center" id="cli_vis" src="docs/assets/gifs/cli_vis_dataset.gif" alt="Using the command line interface to visualize the trainingset">
 <script>create_modal("cli_vis");</script>
 
 <br>
-To visualize the example trainingset select the 'Example_Project' and the 'Hand' skeleton preset. Other than that feel free to play around with the different options.You can cycle through all the available frames by pressing any key. Pressing 'q' or 'esc' will take you back to the Visualize menu.<br>
+To visualize the example trainingset select the 'Example_Project' and the 'Hand' skeleton preset. Other than that feel free to play around with the different options.You can cycle through all the available frames by pressing any key. Pressing 'q' or 'esc' will take you back to the Visualize menu. <br>
+<br>
 </div>
 
 Once you start working with your own data, checking your trainingset before training is really important to ensure there was no problem when creating it and your network will get the input you expect it to get.
@@ -121,14 +122,19 @@ Now that you know what our data looks like it is time to train the network stack
 </div>
 
 <div id="GUI2" class="tabcontent2">
-Using our GUI this is really easy, all you need to do is to navigate to the <span style="color:#63a31f">Train Full</span> menu and press train as shown below. If everything works correctly you should see two progress bars as well as a plot showing the training progress appear. Depending on your GPU training might take up to a few hours, so a bit of patience is required at this point. If you don't want to wait you can also continue with our pretrained weights of course.
+Using our GUI this is really easy, all you need to do is to navigate to the <span style="color:#63a31f">Train Full</span> menu and press train as shown below. If everything works correctly you should see two progress bars as well as a plot showing the training progress appear. Depending on your GPU training might take up to a few hours, so a bit of patience is required at this point. If you don't want to wait you can also continue with our pretrained weights of course. <br>
+<br>
 
 <img class="modalImg center" id="Training_Screenshot" src="docs/assets/Training_Screenshot.png" alt="Loss and accuracy statistics during training">
 <script>create_modal("Training_Screenshot");</script>
 </div>
 
 <div id="CLI2" class="tabcontent2">
- The CLI makes this very easy. All you need to do is launch the interface by running <span style="color:#63a31f">'jarvis launch-cli'</span>, select the <span style="color:#63a31f">Train</span> menu and then run <span style="color:#63a31f">Train</span> as shown below. If everything works correctly you should see a progress bar appearing. Depending on your GPU training might take up to a few hours, so a bit of patience is required at this point. If you don't want to wait you can also continue with our pretrained weights of course.
+ The CLI makes this very easy. All you need to do is launch the interface by running <span style="color:#63a31f">'jarvis launch-cli'</span>, select the <span style="color:#63a31f">Train</span> menu and then run <span style="color:#63a31f">Train</span> as shown below. If everything works correctly you should see a progress bar appearing. Depending on your GPU training might take up to a few hours, so a bit of patience is required at this point. If you don't want to wait you can also continue with our pretrained weights of course. <br>
+<br>
+
+<img class="modalImg center" id="Training_CLI" src="docs/assets/gifs/cli_train.gif" alt="Training all networks using the CLI">
+<script>create_modal("Training_CLI");</script>
 </div>
 
 <script>
@@ -157,7 +163,7 @@ document.getElementById("GUIButton2").click();
 
 
 ### 4. Predicting Poses for the Example Recording
-If you haven't already you should now download our [example recording]().
+If you haven't already you should now download our **[example recording](https://zenodo.org/record/6515085/files/Example_Recording.zip?download=1)**.
 
 <div class="tab">
 <button class="tablinks3" onclick="openTab3(event, 'GUI3')" id="GUIButton3">Graphical Interface</button>
@@ -172,7 +178,10 @@ Once you have the example recording saved on your computer all you need to do is
 <li><b>Start Frame & Number Frames</b> let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000. To predict until the end of the recording set it to -1.</li>
 </ul>
 
-Once all those settings are correct, press the  <span style="color:#63a31f">Predict</span> button and wait for the progress bar to fill up as shown below.
+Once all those settings are correct, press the  <span style="color:#63a31f">Predict</span> button and wait for the progress bar to fill up as shown below.<br>
+<br>
+<img class="modalImg center" id="GUI_Predict" src="docs/assets/gifs/gui_pred.gif" alt="Predicting on Recording using the GUI">
+<script>create_modal("GUI_Predict");</script>
 </div>
 
 <div id="CLI3" class="tabcontent3">
@@ -186,7 +195,10 @@ Once you have the example recording saved on your computer all you need to do is
 <li><b>Start Frame & Number of Frames</b> let you select on which part of the recording you want to run the prediction. For quick results set 'Number of Frames' to 1000, to predict until the end of the recording set it to -1.</li>
 </ul>
 
-After answering all the prompts you should see a progress bar filling up as shown below.
+After answering all the prompts you should see a progress bar filling up as shown below.<br>
+<br>
+<img class="modalImg center" id="CLI_Predict" src="docs/assets/gifs/cli_pred.gif" alt="Predicting on Recording using the CLI">
+<script>create_modal("CLI_Predict");</script>
 </div>
 
 Once the process is finished you will find a directory with a current timestamp in the projects folder under <span style="color:#63a31f">predictions</span>. That folder contains a 'data3D.csv' file that contains the 3D coordinates and their corresponding confidences for every point in time. The directory also contains a '.yaml' file that holds some information necessary for creating videos from your predictions.
@@ -205,18 +217,22 @@ The easiest way to check the quality of the predictions you just created is look
 
 <div id="GUI4" class="tabcontent4">
 In the GUI navigate to the <span style="color:#63a31f">Visualization</span> menu as shown below. Here the right prediction directory should already be selected. If you want you can remove or add cameras from the list of cameras for which you want to create annotated videos. You can now click <span style="color:#63a31f">Create Video</span> as shown below. <br>
-If everything is set correctly you should find a directory containing your freshly labeled videos in the project directory after the progress bar is filled up.  
+If everything is set correctly you should find a directory containing your freshly labeled videos in the project directory after the progress bar is filled up.<br>
+<br>
+<img class="modalImg center" id="GUI_Video" src="docs/assets/gifs/gui_vid.gif" alt="Creating annotated videos from predictions using the GUI">
+<script>create_modal("GUI_Video");</script>  
 </div>
 
 <div id="CLI4" class="tabcontent4">
 Navigate to the <span style="color:#63a31f">Visualize Menu</span> after launching the JARVIS CLI. After selecting <span style="color:#63a31f">Create Videos 3D</span> and the Example_Project you should be able to select the Predictions_3D directory that you created in the last step. If you want you can now select and deselect all the cameras that will be used to create your annotated videos. <br>
-If everything is set correctly you should find a directory containing your freshly labeled videos in the project directory after the progress bar is filled up.
+If everything is set correctly you should find a directory containing your freshly labeled videos in the project directory after the progress bar is filled up.<br>
+<br>
+<img class="modalImg center" id="CLI_Video" src="docs/assets/gifs/cli_vid.gif" alt="Creating annotated videos from predictions using the CLI">
+<script>create_modal("CLI_Video");</script>  
 </div>
 
-Your videos should now look very similar to the ones shown here:
 
-
-Your 'Example_Project' directory will now have the following structure:
+<br>Your 'Example_Project' directory should now have the following structure:
 
 This project structure will be the same for the projects you create using your own data. All of it is auto-generated by the toolbox while you use it, but don't be shy to manually modify it, e.g. when copying models or config files between projects.  
 
@@ -265,7 +281,7 @@ If your dataset menu looks like shown above you can click <span style="color:#63
 
 
 ### 3. Creating a Set of Calibration Parameters
-One of the most important steps in creating good 3D ground truth annotations is precise camera calibration. As always we have a comprehensive [section]() on how to record calibration recordings in our Manual. For this example we provide a set of example calibration recordings that you can download by clicking [here]().<br>
+One of the most important steps in creating good 3D ground truth annotations is precise camera calibration. As always we have a comprehensive [section]() on how to record calibration recordings in our Manual. For this example we provide a set of example calibration recordings that you can download by clicking **[here](https://zenodo.org/record/6515182/files/Calibration_Example.zip?download=1)**.<br>
 Go back to the homescreen of the AnnotationTool and select the <span style="color:#63a31f">Create new Calibration</span> menu item.
 Like before let's first go through the options in the <span style="color:#63a31f">General</span> section.
 - **Calibration Set Name** is the name of the set of calibration parameters you're going to create.

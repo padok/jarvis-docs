@@ -51,17 +51,58 @@ layout: post
   background-color: #63a31f;
 }
 
+.button_gray {
+  background-color: #8f8f8f;
+}
+
 .button_blue {
   background-color: #2064a4ff;
+}
+
+.button_purple {
+  background-color: #6420a4;
 }
 
 </style>
 
 Welcome to our Model Database! Here you will find all of the pretrained HybridNet Models currently available for download.\
-All the models here are officially supported and we only list models that achieve a level of accuracy comparable to the one we achieve in our paper here.
-Please note that these models are to be used for **pretraining only** and you still need to train the network on a dataset created for your specific setup.
+All the models here are officially supported and we only list models that achieve a high level of accuracy.
+Please note that these models should be used for **pretraining only** and you still need to train the network on a dataset created for your specific setup.<br>
+Along with each set of models we provide the trainingset that the model was trained with as well as set of recordings for you to validate the models performance with.
 
 <div class="flex_align">
+    <div class="frame" align="center">
+    <span style="font-size:18px"><b>Monkey Hand</b></span><br>
+    <img width="100%" src="docs/assets/gifs/Monkey.gif">
+    <table>
+      <tr>
+        <th>Annotated Frames</th>
+        <th>3000</th>
+      </tr>
+      <tr>
+        <th>Number of subjects</th>
+        <th>1</th>
+      </tr>
+      <tr>
+        <th>Dataset Size</th>
+        <th>0.7 GB</th>
+      </tr>
+			<tr>
+				<th>Recordings Size</th>
+				<th>1.3 GB</th>
+			</tr>
+    </table>
+    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <button class="button button_green">Download Models</button>
+    </form>
+    <form method="get" action="https://zenodo.org/record/6515085/files/Example_Dataset.zip?download=1">
+    <button class="button button_blue">Download Trainingset</button>
+    </form>
+		<form method="get" action="https://zenodo.org/record/6515085/files/Example_Recording.zip?download=1">
+		<button class="button button_purple">Download Recording</button>
+		</form>
+    </div>
+		<br>
     <div class="frame" align="center">
     <span style="font-size:18px"><b>Human Hand</b></span><br>
     <img width="100%" src="docs/assets/gifs/Human.gif">
@@ -78,38 +119,16 @@ Please note that these models are to be used for **pretraining only** and you st
         <th>Dataset Size</th>
         <th>1.5 GB</th>
       </tr>
+			<tr>
+				<th>Recordings Size</th>
+				<th>1.3 GB</th>
+			</tr>
     </table>
     <form method="get" action="docs/assets/Vortex-d_5.pth">
     <button class="button button_green">Download Models</button>
     </form>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
-    <button class="button button_blue">Download Dataset</button>
-    </form>
-    </div>
-		<br>
-    <div class="frame" align="center">
-    <span style="font-size:18px"><b>Monkey Hand</b></span><br>
-    <img width="100%" src="docs/assets/gifs/Monkey.gif">
-    <table>
-      <tr>
-        <th>Annotated Frames</th>
-        <th>3000</th>
-      </tr>
-      <tr>
-        <th>Number of subjects</th>
-        <th>1</th>
-      </tr>
-      <tr>
-        <th>Dataset Size</th>
-        <th>1.5 GB</th>
-      </tr>
-    </table>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
-    <button class="button button_green">Download Models</button>
-    </form>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
-    <button class="button button_blue">Download Dataset</button>
-    </form>
+    <button class="button button_gray">Coming Soon</button>
+		<button class="button button_gray">Coming Soon</button>
     </div>
 </div>
 
@@ -132,13 +151,16 @@ Please note that these models are to be used for **pretraining only** and you st
         <th>Dataset Size</th>
         <th>1.5 GB</th>
       </tr>
+			<tr>
+				<th>Recordings Size</th>
+				<th>1.3 GB</th>
+			</tr>
     </table>
     <form method="get" action="docs/assets/Vortex-d_5.pth">
     <button class="button">Download Models</button>
     </form>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
-    <button class="button button_blue">Download Dataset</button>
-    </form>
+    <button class="button button_gray">Coming Soon</button>
+		<button class="button button_gray">Coming Soon</button>
     </div>
 		<br>
     <div class="frame" align="center">
@@ -157,47 +179,17 @@ Please note that these models are to be used for **pretraining only** and you st
         <th>Dataset Size</th>
         <th>1.5 GB</th>
       </tr>
+			<tr>
+				<th>Recordings Size</th>
+				<th>1.3 GB</th>
+			</tr>
     </table>
     <form method="get" action="docs/assets/Vortex-d_5.pth">
     <button class="button">Download Models</button>
     </form>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
-    <button class="button button_blue">Download Dataset</button>
-    </form>
+    <button class="button button_gray">Coming Soon</button>
+		<button class="button button_gray">Coming Soon</button>
     </div>
 </div>
 
 <br>
-
-
-Additionally we provide models pretrained on the 1.5M image image-classification dataset EcoSet as well as the MPII human pose dataset. Those can be used as a starting point when training on a task different to those listed above.
-
-<div class="flex_align">
-    <div class="frame" align="center">
-    <span style="font-size:18px"><b>EcoSet Image Classification</b></span><br>
-    <img width="100%" src="docs/assets/gifs/Rat.gif">
-    <table>
-      <tr>
-        <th>Number Images</th>
-        <th>1.5M</th>
-      </tr>
-    </table>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
-    <button class="button">Download Models</button>
-    </form>
-    </div>
-		<br>
-    <div class="frame" align="center">
-    <span style="font-size:18px"><b>MPII Human Pose</b></span><br>
-    <img width="100%" src="docs/assets/mpii.png">
-    <table>
-      <tr>
-        <th>Number Images</th>
-        <th>18000</th>
-      </tr>
-    </table>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
-    <button class="button">Download Models</button>
-    </form>
-    </div>
-</div>
