@@ -164,16 +164,16 @@ Along with each set of models we provide the trainingset that the model was trai
     </div>
 		<br>
     <div class="frame" align="center">
-    <span style="font-size:18px"><b>Human Pose</b></span><br>
-    <img width="100%" src="docs/assets/gifs/Dancer.gif">
+    <span style="font-size:18px"><b>Mouse Pose</b></span><br>
+    <img width="100%" src="docs/assets/gifs/Mouse.gif">
     <table>
       <tr>
         <th>Annotated Frames</th>
-        <th>1500</th>
+        <th>3000</th>
       </tr>
       <tr>
         <th>Number of subjects</th>
-        <th>1</th>
+        <th>3</th>
       </tr>
       <tr>
         <th>Dataset Size</th>
