@@ -1,6 +1,8 @@
 This is a fork of the jekyll-gitbook theme, for the documentation of the JARVIS 3D Motion Capture Toolbox.
 
-## Instructions for running jekyll locally:
+**If you are interested in our 3D Markerless Motion Capture Toolbox please check out our [website](https://jarvis-mocap.github.io/jarvis-docs/) or our main [GitHub Repo](https://github.com/JARVIS-MoCap)!**
+
+## Instructions to run jekyll locally:
 
 - Install ruby with <code>sudo apt install ruby</code>
 - install other dependencies with <code>sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev</code>
