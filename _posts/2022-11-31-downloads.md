@@ -84,7 +84,7 @@ Please checkout our [Github Repositories](https://github.com/JARVIS-MoCap) if yo
 <form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool/releases/download/v1.0/JARVIS-AnnotationTool_0.3-1_amd64_Ubuntu_2004.deb">
 <button class="button button_purple">Ubuntu 20.04</button>
 </form>
-<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool/releases/download/v1.0/JARVIS-AnnotationTool_0.3-1_amd64_Ubuntu_2004.deb">
+<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool/releases/download/v1.0/JARVIS-AnnotationTool_0.3-1_amd64_1804.deb">
 <button class="button button_purple">Ubuntu 18.04</button>
 </form>
 </div>
@@ -97,12 +97,10 @@ Please checkout our [Github Repositories](https://github.com/JARVIS-MoCap) if yo
 <span style="font-size:26px"><b>AcquisitionTool</b></span><br>
 <img width="100%" src="docs/assets/JARVIS_AcquisitionTool.png">
 <button class="button button_gray">Windows 64 bit (Coming Soon)</button>
-<form method="get" action="https://zenodo.org/record/6515085/files/Example_Recording.zip?download=1">
+<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AcquisitionTool/releases/download/v1.0/JARVIS-AcquisitionTool_0.3-1_amd64_2004.deb">
 <button class="button button_purple">Ubuntu 20.04</button>
 </form>
-<form method="get" action="https://zenodo.org/record/6515085/files/Example_Recording.zip?download=1">
-<button class="button button_purple">Ubuntu 18.04</button>
-</form>
+<button class="button button_gray">Ubuntu 18.04 (Coming Soon)</button>
 </div>
 </div>
 <br>

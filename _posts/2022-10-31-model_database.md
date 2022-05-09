@@ -68,6 +68,7 @@ layout: post
 Welcome to our Model Database! Here you will find all of the pretrained HybridNet Models currently available for download.\
 All the models here are officially supported and we only list models that achieve a high level of accuracy.
 Please note that these models should be used for **pretraining only** and you still need to train the network on a dataset created for your specific setup.<br>
+To include them in your JARVIS installation simply extract them into the **pretrained** folder inside your main **JARVIS-HybridNet** directory. 
 Along with each set of models we provide the trainingset that the model was trained with as well as set of recordings for you to validate the models performance with.
 
 <div class="flex_align">
@@ -92,7 +93,7 @@ Along with each set of models we provide the trainingset that the model was trai
 				<th>1.3 GB</th>
 			</tr>
     </table>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-HybridNet/releases/download/v1.0/MonkeyHand.zip">
     <button class="button button_green">Download Models</button>
     </form>
     <form method="get" action="https://zenodo.org/record/6515085/files/Example_Dataset.zip?download=1">
@@ -124,7 +125,7 @@ Along with each set of models we provide the trainingset that the model was trai
 				<th>1.3 GB</th>
 			</tr>
     </table>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-HybridNet/releases/download/v1.0/HumanHand.zip">
     <button class="button button_green">Download Models</button>
     </form>
     <button class="button button_gray">Coming Soon</button>
@@ -156,7 +157,7 @@ Along with each set of models we provide the trainingset that the model was trai
 				<th>1.3 GB</th>
 			</tr>
     </table>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-HybridNet/releases/download/v1.0/RatPose.zip">
     <button class="button">Download Models</button>
     </form>
     <button class="button button_gray">Coming Soon</button>
@@ -184,7 +185,7 @@ Along with each set of models we provide the trainingset that the model was trai
 				<th>1.3 GB</th>
 			</tr>
     </table>
-    <form method="get" action="docs/assets/Vortex-d_5.pth">
+    <form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-HybridNet/releases/download/v1.0/MousePose.zip">
     <button class="button">Download Models</button>
     </form>
     <button class="button button_gray">Coming Soon</button>
