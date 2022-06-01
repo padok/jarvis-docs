@@ -153,7 +153,6 @@ document.getElementById("GUIButton2").click();
         <li><b>Training CenterDetect:</b> In this step a 2D-CNN is trained to detect the center of the entity you are tracking. This will be used to estimate the location of the entity in 3D, essentially telling the 3D-CNN where to look.</li>
         <li><b>Training KeypointDetect:</b> In this step another 2D-CNN is trained to detect all your annotated keypoints in a single image. The output of this network will subsequently be used to construct the 3D feature volume that is the input of our 3D-CNN. </li>
         <li><b>Training HybridNet:</b> In this step the 3D part of our full HybridNet architecture is trained. It's job is to use the 3D feature volumes created by the KeypointDetect stage to create the final 3D pose predictions.</li>
-        <li><b>Finetuning HybridNet (Optional):</b>In this step the 2D and 3D blocks of the HybridNet architecture are trained jointly. This can give an additional boost in accuracy, but is not required.</li>
         </ol>
       </p>
     </div>
