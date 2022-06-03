@@ -75,16 +75,16 @@ Please checkout our [Github Repositories](https://github.com/JARVIS-MoCap) if yo
 <div class="frame">
 <span style="font-size:26px"><b>AnnotationTool</b></span><br>
 <img width="100%" src="docs/assets/gifs/Annotation_Tool_Vid.gif">
-<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool/releases/download/v1.0/AnnotationTool_Installer_Windows.msi">
+<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool/releases/download/v1.1/AnnotationTool_Installer_Windows.msi">
 <button class="button button_green">Windows 64 bit</button>
 </form>
-<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool/releases/download/v1.0/AnnotationTool_MacOS.zip">
+<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool/releases/download/v1.1/AnnotationTool_1.1_Mac_OS.zip">
 <button class="button button_blue">MacOS (Catalina or newer)</button>
 </form>
-<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool/releases/download/v1.0/JARVIS-AnnotationTool_0.3-1_amd64_Ubuntu_2004.deb">
+<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool/releases/download/v1.1/JARVIS-AnnotationTool_1.1-1_amd64_2004.deb">
 <button class="button button_purple">Ubuntu 20.04</button>
 </form>
-<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool/releases/download/v1.0/JARVIS-AnnotationTool_0.3-1_amd64_1804.deb">
+<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool/releases/download/v1.1/JARVIS-AnnotationTool_1.1-1_amd64_1804.deb">
 <button class="button button_purple">Ubuntu 18.04</button>
 </form>
 </div>
@@ -96,11 +96,18 @@ Please checkout our [Github Repositories](https://github.com/JARVIS-MoCap) if yo
 <div class="frame">
 <span style="font-size:26px"><b>AcquisitionTool</b></span><br>
 <img width="100%" src="docs/assets/JARVIS_AcquisitionTool.png">
-<button class="button button_gray">Windows 64 bit (Coming Soon)</button>
-<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AcquisitionTool/releases/download/v1.0/JARVIS-AcquisitionTool_0.3-1_amd64_2004.deb">
+<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AcquisitionTool/releases/download/v1.0/AcquisitionTool_Installer_Windows.msi">
+<button class="button button_green">Windows 64 bit</button>
+</form>
+<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AcquisitionTool/releases/download/v1.0/JARVIS-AcquisitionTool_1.0-1_amd64_2004.deb">
 <button class="button button_purple">Ubuntu 20.04</button>
 </form>
-<button class="button button_gray">Ubuntu 18.04 (Coming Soon)</button>
+<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AcquisitionTool/releases/download/v1.0/JARVIS-AcquisitionTool_1.0-1_amd64_1804.deb">
+<button class="button button_purple">Ubuntu 18.04</button>
+</form>
+<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AcquisitionTool/releases/download/v1.0/Arduino_Trigger_Firmware.zip">
+<button class="button button_blue">Arduino Trigger Firmware</button>
+</form>
 </div>
 </div>
 <br>
