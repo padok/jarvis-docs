@@ -43,10 +43,4 @@ incremental: false
 regenerate: true
 
 plugins:
-  - jekyll-spaceship
-
-# Where things are
-jekyll-spaceship:
-  plantuml-processor:
-    mode: pre-fetch # mode value 'pre-fetch' for fetching image at building stage
-    src: http://www.plantuml.com/plantuml/svg/
+  - jemoji

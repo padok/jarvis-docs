@@ -2,3 +2,4 @@ _site/
 _draft/
 .jekyll-cache/
 Example_Data
+.DS_Store
