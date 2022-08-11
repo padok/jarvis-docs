@@ -276,7 +276,7 @@ If your dataset menu looks like shown above you can click <span style="color:#63
 
 
 ### 3. Creating a Set of Calibration Parameters
-One of the most important steps in creating good 3D ground truth annotations is precise camera calibration. As always we have a comprehensive [section]() on how to record calibration recordings in our Manual. For this example we provide a set of example calibration recordings that you can download by clicking **[here](https://zenodo.org/record/6515182/files/Calibration_Example.zip?download=1)**.<br>
+One of the most important steps in creating good 3D ground truth annotations is precise camera calibration. As always we have a comprehensive [section]() on how to record calibration recordings in our Manual. For this example we provide a set of example calibration recordings that you can download by clicking **[here](https://zenodo.org/record/6982805/files/Calibration_Example.zip?download=1)**.<br>
 Go back to the homescreen of the AnnotationTool and select the <span style="color:#63a31f">Create new Calibration</span> menu item.
 Like before let's first go through the options in the <span style="color:#63a31f">General</span> section.
 - **Calibration Set Name** is the name of the set of calibration parameters you're going to create.
