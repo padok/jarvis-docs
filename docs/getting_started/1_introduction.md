@@ -1,6 +1,6 @@
 # Getting Started with JARVIS
 
-![Jarvis Banner](assets/images/index/overview_wo_text.png){ .off-glb }
+![Jarvis Banner](../assets/images/index/overview_wo_text.png){ .off-glb }
 
 Welcome to our Getting Started Guide! This guide will teach you how to set up the three different parts of our toolbox and how to work with our example data. This will help you get an idea of all the steps required to build and use a 3D markerless motion capture setup. After working through this guide you will be ready to have a look at our **[Manual](/manual)** and learn all the things necessary to build you own motion capture system from scratch.<br>
 Note that this Guide is somewhat back to front. You will learn how to work with annotated data before we show you how to actually annotate it.<br>

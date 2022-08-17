@@ -1,12 +1,12 @@
 # JARVIS - Markerless 3D Motion Capture Toolbox
 
-![Jarvis Banner](assets/images/index/overview.png){ .off-glb }
+![Jarvis Banner](../assets/images/index/overview.png){ .off-glb }
 
 JARVIS makes highly precise markerless 3D motion capture easy. All you need to get started is a multi camera recording setup and an idea of what you want to track.
 Our Toolbox will assist you on every step along the way, from recording synchronised videos, to quickly and consistently annotating your data,
 all the way to the final 3D pose predictions.\
 If you are interested in setting up a 3D Motion Capture System or just want to learn more about our toolbox we strongly recommend having a look at our
-[Getting Started Guide](/getting_started) and our [Manual](/manual). Here you'll find an overview of our workflow as well as tutorials to help you build a successful 3D tracking pipeline with JARVIS.
+[Getting Started Guide](/getting_started/1_introduction) and our [Manual](/manual/1_introduction). Here you'll find an overview of our workflow as well as tutorials to help you build a successful 3D tracking pipeline with JARVIS.
 
 ## Why JARVIS?
 Markerlerss motion capture has become an essential data analysis tool in many fields of research, pioneered largely by [DeepLabCut](https://github.com/DeepLabCut/DeepLabCut) several years ago.
@@ -27,7 +27,7 @@ Our System consists of three parts:
 <div class="wrapper" align="center">
   <div class="frame human" align="center">
     <span style="font-size:18px"><b>Human Hand</b></span>
-    <img width="100%" src="assets/gifs/index/Human.gif">
+    <img class=rounded width="100%" src="assets/gifs/index/Human.gif">
     <table id="info">
       <tr>
         <td>Annotated Frames</td>
@@ -41,7 +41,7 @@ Our System consists of three parts:
   </div>
   <div class="frame monkey" align="center">
     <span style="font-size:18px"><b>Monkey Hand</b></span>
-    <img width="100%" src="assets/gifs/index/Monkey.gif">
+    <img class=rounded width="100%" src="assets/gifs/index/Monkey.gif">
     <table id="info">
       <tr>
         <td>Annotated Frames</td>
@@ -55,7 +55,7 @@ Our System consists of three parts:
   </div>
   <div class="frame rat" align="center">
     <span style="font-size:18px"><b>Rat Full Body</b></span>
-    <img width="100%" src="assets/gifs/index/Rat.gif">
+    <img class=rounded width="100%" src="assets/gifs/index/Rat.gif">
     <table id="info">
       <tr>
         <td>Annotated Frames</td>
@@ -69,7 +69,7 @@ Our System consists of three parts:
   </div>
   <div class="frame mouse" align="center">
     <span style="font-size:18px"><b>Mouse Full Body</b></span>
-    <img width="100%" src="assets/gifs/index/Mouse.gif">
+    <img class=rounded width="100%" src="assets/gifs/index/Mouse.gif">
     <table id="info">
       <tr>
         <td>Annotated Frames</td>

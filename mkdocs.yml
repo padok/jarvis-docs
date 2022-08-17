@@ -4,9 +4,15 @@ site_name: JARVIS Mocap -  Documentation
 nav:
   - "Home": "index.md"
   - "Getting Started": 
-    - "Introduction": "getting_started.md"
-    - "Exploring the Example Trainingset": "exploring_example.md"
-  
+    - "1. Introduction": "getting_started/1_introduction.md"
+    - "2. Exploring the Example Trainingset": "getting_started/2_exploring_example.md"
+    - "3. Creating a new Trainingset": "getting_started/3_creating_trainingset.md"
+  - "Manual":
+    - "1. Introduction": "manual/1_introduction.md"
+    - "2. Designing a Setup": "manual/2_mocap_setup_design.md"
+    - "3. Setting up the AcquisitionTool": "manual/3_acquisitiontool_setup.md"
+    - "4. Recording Calibration Videos": "manual/4_recording_calibration.md"
+    - "5. Creating and Labeling Datasets": "manual/5_creating_and_labeling_datasts.md"
 
 theme:
   name: material
