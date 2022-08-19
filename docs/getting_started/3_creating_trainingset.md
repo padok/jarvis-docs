@@ -12,14 +12,14 @@ If everything goes according to plan you will end up with a trainingset very sim
 
 
 ## 1. Installing the AnnotationTool
-If you are using Windows, MacOS or Ubuntu all you have to do is got to our [downloads page]() and grab the installer for your OS. If you are running a different Linux distribution you will have to build the AnnotationTool yourself. There is a guide on how to do that on its [GitHub page](https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool).
+If you are using Windows, MacOS or Ubuntu all you have to do is got to our [downloads page](../../downloads/downloads) and grab the installer for your OS. If you are running a different Linux distribution you will have to build the AnnotationTool yourself. There is a guide on how to do that on its [GitHub page](https://github.com/JARVIS-MoCap/JARVIS-AnnotationTool).
 Once you install and launch the tool you will be greeted with a home screen that looks like this:
 
 ![AnnotationTool Home Screen](../assets/images/getting_started/AnnotationTool_HomeScreen.png){: .center .rounded width="90%"}
 
 
 ## 2. Extracting a Dataset from the Example Recording
-Clicking on the first item in the list on the homescreen will open up the dataset extraction menu. This will allow you to extract framesets from your recordings that you will subsequently annotate. For this tutorial we will stick to the basics and use the fastest and quickest way of extracting a handful of framesets. Definitely check out the relevant [section]() in our Manual to learn all the details about how to create a dataset that is as representative of your entire recording as possible.
+Clicking on the first item in the list on the homescreen will open up the dataset extraction menu. This will allow you to extract framesets from your recordings that you will subsequently annotate. For this tutorial we will stick to the basics and use the fastest and quickest way of extracting a handful of framesets. Definitely check out the relevant [section](../../manual/5_creating_and_labeling_datasts/) in our Manual to learn all the details about how to create a dataset that is as representative of your entire recording as possible.
 First let's go through the options in the <span style="color:#63a31f">Configuration</span> section.
 - **New Dataset Name** is the name of the dataset you're going to create.
 - **New Dataset Path** is the directory in which your new dataset will be saved.
@@ -90,4 +90,4 @@ If everything looks like shown below you can click the <span style="color:#63a31
 
 You should now have a trainingset that has the same structure as the one you used to train your first network.
 
-:tada: That's it! Now it's time to get started with training a model on your own data. If you want to learn more about our toolbox we strongly suggest you have a look at our [Manual](manual/1_manual). There you will find detailed instructions on every step of building a 3D motion capture setup with JARVIS.
+:tada: That's it! Now it's time to get started with training a model on your own data. If you want to learn more about our toolbox we strongly suggest you have a look at our [Manual](../../manual/1_introduction). There you will find detailed instructions on every step of building a 3D motion capture setup with JARVIS.
