@@ -70,6 +70,7 @@ Programming the Arduino is really easy thanks to our PlatformIO install scripts 
     ```
 
 === "Windows"
+    - Make sure you have a recent version of Python installed. You can either get it directly from the Microsoft Store or download it from [here](https://www.python.org/downloads/).
     - Clone our [TriggerFirmware Repository](https://github.com/JARVIS-MoCap/JARVIS-TriggerFirmware) from GitHub with:
     ```
     git clone --recursive https://github.com/JARVIS-MoCap/JARVIS-TriggerFirmware.git
@@ -79,7 +80,11 @@ Programming the Arduino is really easy thanks to our PlatformIO install scripts 
 
     - Change into the TriggerFirmware directory and execute the installer batch file:
     ```
-    cd JARVIS-TriggerFirmware && install_arduino_uno.bat
+    .\install_arduino_uno.bat
+    ```
+    - If the install throws an error related to `Long Path Support` first remove the `JARVIS-TriggerFirmware\PlatformIO\install` directory and then open a command prompt as administrator and run:
+    ```
+    reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1
     ```
 
 Now comes the slightly tricky part. wiring up all the trigger cables. The exact connections you have to make depend on your exact camera model, but the general idea is always the same:
