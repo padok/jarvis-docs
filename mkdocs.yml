@@ -16,6 +16,7 @@ nav:
   - "Model Database": "model_database/model_database.md"
   - "Downloads": "downloads/downloads.md"
 
+
 theme:
   name: material
   palette:
