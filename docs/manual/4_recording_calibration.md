@@ -32,26 +32,7 @@ The second step is to select a primary camera. This camera defines your referenc
 
 The main thing to watch out for during extrinsics recordings is that both cameras have a good and unoccluded view of the checkerboard. As long as that's the case it is as simple as just waving the board around as much as you can.\
 Side note: While it is **strongly** recommended to record seperate videos for intrinsics and extrinsics it is possibly to use your extrinsic recordings for intrinsics calibration.
-If you do so make sure to still follow the intrinsic calibration rules during your recordings. jsdkjansdkjnasdkjasndkjasnd askjdnaskdj
-
-<table id="info">
-  <tr>
-    <td>Annotated Frames</td>
-    <td>3000</td>
-  </tr>
-  <tr>
-    <td>Number of subjects</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td>Dataset Size</td>
-    <td>0.7 GB</td>
-  </tr>
-  <tr>
-    <td>Recordings Size</td>
-    <td>1.3 GB</td>
-    </tr>
-</table>
+If you do so make sure to still follow the intrinsic calibration rules during your recordings.
 
 
 The main thing to watch out for during extrinsics recordings is that both cameras have a good and unoccluded view of the checkerboard. As long as that's the case it is as simple as just waving the
