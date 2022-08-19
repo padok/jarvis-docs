@@ -55,7 +55,32 @@ For a quick test connect at least one or two cameras to your computer, launch th
 
 At this point you should have a recording setup that can be controlled using our AcquisitonTool and can stream video from all of your cameras. The last but very important step that is still missing is making sure all cameras record their videos perfectly in sync. To do this we use an external trigger pulse supplied by an [Arduino Uno](https://store.arduino.cc/products/arduino-uno-rev3) (or similar, our PlatformIO project supports many of the commonly used Microcontrollers).
 
-!!! warning "**TODO:** Add PlatformIO install instructions"
+#### Programming the Arduino
+Programming the Arduino is really easy thanks to our PlatformIO install scripts for both Linux and Windows. Simply do the following:
+
+=== "Linux"
+    - Clone our [TriggerFirmware Repository](https://github.com/JARVIS-MoCap/JARVIS-TriggerFirmware) from GitHub with:
+    ```
+    git clone --recursive https://github.com/JARVIS-MoCap/JARVIS-TriggerFirmware.git
+    ```
+
+    - Change into the TriggerFirmware directory and execute the install script:
+    ```
+    cd JARVIS-TriggerFirmware && sh install_arduino_uno.sh
+    ```
+
+=== "Windows"
+    - Clone our [TriggerFirmware Repository](https://github.com/JARVIS-MoCap/JARVIS-TriggerFirmware) from GitHub with:
+    ```
+    git clone --recursive https://github.com/JARVIS-MoCap/JARVIS-TriggerFirmware.git
+    ```
+    !!! warning "Do not use the `Download ZIP` option on GitHub"
+        GitHub does not include all neccessary submodules in its .zip download. If you don't have git installed on your computer you can click **[here]()** to download a .zip folder containing all the necessary data.
+
+    - Change into the TriggerFirmware directory and execute the installer batch file:
+    ```
+    cd JARVIS-TriggerFirmware && install_arduino_uno.bat
+    ```
 
 Now comes the slightly tricky part. wiring up all the trigger cables. The exact connections you have to make depend on your exact camera model, but the general idea is always the same:
 
@@ -65,6 +90,9 @@ Now comes the slightly tricky part. wiring up all the trigger cables. The exact 
 For more details on how to hook up your specific camera [this guide](https://www.flir.eu/support-center/iis/machine-vision/application-note/configuring-synchronized-capture-with-multiple-cameras/) from FLIR might be helpful. Here is a very basic wiring diagram for the FLIR BlackFly S:
 
 ![Arduino Wiring](../assets/images/manual/ArduinoWiring.png){: .center .rounded width="70%" }
+
+
+
 
 Once your Arduino trigger system is all wired up you can go back to the AcquisitionTool and connect the trigger using the <img class=off-glb src="../../assets/images/manual/add_green.png" width="18px"> button. To make the cameras use the trigger signal there are a few settings you will have to change on each camera. Again, the exact settings might vary slightly depending on your camera model. This guide shows the settings for the BlackFly S, check FLIRs documentation on your camera model if those settings don't work. Here's the step-by-step guide:
 
