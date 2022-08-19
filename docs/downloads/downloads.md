@@ -34,8 +34,8 @@ Please checkout our [Github Repositories](https://github.com/JARVIS-MoCap) if yo
 <form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AcquisitionTool/releases/download/v1.0/JARVIS-AcquisitionTool_1.0-1_amd64_1804.deb">
 <button class="button button_purple">Ubuntu 18.04</button>
 </form>
-<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-AcquisitionTool/releases/download/v1.0/Arduino_Trigger_Firmware.zip">
-<button class="button button_blue">Arduino Trigger Firmware</button>
+<form method="get" action="https://github.com/JARVIS-MoCap/JARVIS-TriggerFirmware/releases/download/v0.1/JARVIS-TriggerFirmware.zip">
+<button class="button button_blue">Trigger Firmware</button>
 </form>
 </div>
 <br>

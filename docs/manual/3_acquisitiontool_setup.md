@@ -75,7 +75,7 @@ Programming the Arduino is really easy thanks to our PlatformIO install scripts 
     git clone --recursive https://github.com/JARVIS-MoCap/JARVIS-TriggerFirmware.git
     ```
     !!! warning "Do not use the `Download ZIP` option on GitHub"
-        GitHub does not include all neccessary submodules in its .zip download. If you don't have git installed on your computer you can click **[here]()** to download a .zip folder containing all the necessary data.
+        GitHub does not include all neccessary submodules in its .zip download. If you don't have git installed on your computer you can click **[here](https://github.com/JARVIS-MoCap/JARVIS-TriggerFirmware/releases/download/v0.1/JARVIS-TriggerFirmware.zip)** to download a .zip folder containing all the necessary data.
 
     - Change into the TriggerFirmware directory and execute the installer batch file:
     ```
