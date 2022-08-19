@@ -87,6 +87,8 @@ Programming the Arduino is really easy thanks to our PlatformIO install scripts 
     reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1
     ```
 
+#### Wiring up the Arduino
+
 Now comes the slightly tricky part. wiring up all the trigger cables. The exact connections you have to make depend on your exact camera model, but the general idea is always the same:
 
 - Connect the ground (GND) pins of all cameras to one of the pins on the Arduino labeled GND.  
