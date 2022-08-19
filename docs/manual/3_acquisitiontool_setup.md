@@ -24,7 +24,7 @@ With the basic setup design out of the way, the next challenge to tackle is gett
 ## 2. Software Installation
 
 The first thing you will have to do is install the **FLIR Spinnaker SDK**. You can download it [here](https://www.flir.eu/products/spinnaker-sdk/). If you are running Windows make sure to download the '\*_x64.exe' found in the 'Latest Spinnaker Full SDK' directory. For Linux the '\*amd64-pkg.tar.gz' is the package you want.\
-Once that is installed you can grab the [AcquisitionTool Installer](https://jarvis-mocap.github.io/jarvis-docs//2021-10-29-downloads.html) from the Downloads section. Under Windows just run the installer and follow the instructions. Under Linux you can install the AcquisitionTool by running `sudo apt install ./JARVIS-AcquisitionTool_1.0-1_amd64_2004.deb` (Make sure to replace the version numbers with the version you downloaded).
+Once that is installed you can grab the [AcquisitionTool Installer](../../downloads/downloads) from the Downloads section. Under Windows just run the installer and follow the instructions. Under Linux you can install the AcquisitionTool by running `sudo apt install ./JARVIS-AcquisitionTool_1.0-1_amd64_2004.deb` (Make sure to replace the version numbers with the version you downloaded).
 If the installation completed successfully the AcquisitionTool should now be available in your Start menu under Windows. If you are running Linux you can open it by typing `AcquisitionTool` into a terminal and pressing enter.
 
 This is a good time to test out if everything is working as intended, before we move on to setting up synchronization with the external trigger.\
