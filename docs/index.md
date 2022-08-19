@@ -1,6 +1,6 @@
 # JARVIS - Markerless 3D Motion Capture Toolbox
 
-![Jarvis Banner](../assets/images/index/overview.png){ .off-glb }
+![Jarvis Banner](assets/images/index/overview.png){ .off-glb }
 
 JARVIS makes highly precise markerless 3D motion capture easy. All you need to get started is a multi camera recording setup and an idea of what you want to track.
 Our Toolbox will assist you on every step along the way, from recording synchronised videos, to quickly and consistently annotating your data,
