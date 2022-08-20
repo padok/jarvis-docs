@@ -21,19 +21,19 @@ Use "Clone Git Repository" in VS Code and type:
 `https://github.com/JARVIS-MoCap/JARVIS-TriggerFirmware.git`
 in the window that opens.
 
-![Code_1_arrow](docs/assets/images/developer_documentation_trigger/trigger_doc/Code_1_arrow.png)
+![Code_1_arrow](/assets/images/developer_documentation_trigger/Code_1_arrow.png)
 
-![Code_2](docs/assets/images/developer_documentation_trigger/trigger_doc/Code_2.png)
+![Code_2](/assets/images/developer_documentation_trigger/Code_2.png)
 
 After that, open the folder manually or press open folder when VS Code asks you for the Git repository you just cloned:
 
-![Code_3](docs/assets/images/developer_documentation_trigger/trigger_doc/Code_3.png).
+![Code_3](/assets/images/developer_documentation_trigger/Code_3.png).
 
 If PlatformIO is installed correctly, all the required dependencies should be installed automatically.
 
 After the project is set up correctly, open the PlatformIO tab on the left side of the page 
 
-![Code_4](docs/assets/images/developer_documentation_trigger/trigger_doc/Code_4.png)
+![Code_4](/assets/images/developer_documentation_trigger/Code_4.png)
 
 If your microcontroller is officially supported, connect your microcontroller to your machine, open the context menu of the microcontroller you want to flash and press "Upload".
 
