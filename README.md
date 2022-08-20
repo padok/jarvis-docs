@@ -2,10 +2,10 @@
 
 ## Instructions to run locally
 
-- Make sure you have `mkdocs-material` and `mkdocs-glightbox` are installed with:
+- Make sure you have `mkdocs-material`, `mkdocs-glightbox` and `plantuml-markdown` are installed with:
 
       pip install mkdocs-material mkdocs-glightbox plantuml-markdown
-Xxx      
-- To host the webiste locally:
+
+- To host the website locally:
 
       mkdocs serve
