@@ -21,19 +21,19 @@ Use "Clone Git Repository" in VS Code and type:
 `https://github.com/JARVIS-MoCap/JARVIS-TriggerFirmware.git`
 in the window that opens.
 
-<!-- ![Code_1_arrow](docs/assets/trigger_doc/Code_1_arrow.png) -->
+![Code_1_arrow](docs/assets/trigger_doc/Code_1_arrow.png)
 
-<!-- ![Code_2](docs/assets/trigger_doc/Code_2.png) -->
+![Code_2](docs/assets/trigger_doc/Code_2.png)
 
 After that, open the folder manually or press open folder when VS Code asks you for the Git repository you just cloned:
 
-<!-- ![Code_3](docs/assets/trigger_doc/Code_3.png). -->
+![Code_3](docs/assets/trigger_doc/Code_3.png).
 
 If PlatformIO is installed correctly, all the required dependencies should be installed automatically.
 
 After the project is set up correctly, open the PlatformIO tab on the left side of the page 
 
-<!-- ![Code_4](docs/assets/trigger_doc/Code_4.png) -->
+![Code_4](docs/assets/trigger_doc/Code_4.png)
 
 If your microcontroller is officially supported, connect your microcontroller to your machine, open the context menu of the microcontroller you want to flash and press "Upload".
 
@@ -73,8 +73,6 @@ The default behavior for all microcontrollers with enough pins is that pins 0-15
 @enduml
 ```
 
-<!-- ![A](docs/assets/plantuml/SoWkIImgAStDuL8ioKZDJLKeJinBAIx9pqlbKWfAJSulIidCIrS8S5PIqBLJy7KEjL8eJYqfBL3GS2jAp4qjraHNPQEh2r6Mc9oDKyuphw2qf1ZJ0eHEXzIy5A2Z0000.svg) -->
-
 ```plantuml
 @startuml
 !theme sandstone
@@ -82,8 +80,6 @@ The default behavior for all microcontrollers with enough pins is that pins 0-15
 "Recording PC" -> MCU: ack
 @enduml
 ```
-
-<!-- ![A](docs/assets/plantuml/SoWkIImgAStDuL8ioKZDJLKeJinBAIx9pqlbKWfAJSulIidCIrS8S5PIiD7LLV1r3hLIyCmhA2qfHfVMjOF89YPdSpcavgK0ZGG0.svg) -->
 
 Waring: ACKs are not yet handled by the MCU
 
@@ -108,9 +104,6 @@ B is {hidden}
 A is {hidden}
 @enduml
 ```
-
-
-<!-- ![A](docs/assets/plantuml/HOzHQWCn34J_TGhL9qWQ-k-u1sWX9n3Mm9fwxM1feQ7qxirs5_PJR-O99fhBy6MkzE8JPh19K_FUG9QbWiyincydlfTlLAFSMou63kdXiB26rmD-Ilw2yyt7adqP-CyJKJpHbOjnUFz8DqRBNQ61qiecY69Gl6pdNHwrYr8yl-xE_bHHormSO_T-fgAAzljiNhRcGT3qEUaF.svg) -->
 
 ### Input Message
 
@@ -146,8 +139,6 @@ B is {hidden}
 @enduml
 ```
 
-<!-- ![A](docs/assets/plantuml/VOj1IWGn44NtTOfoJZ0ze-2ofayWU80X91yxc4w7L0LinBjBMw0xT_N-goTgeTjO2ptOWXMieIQrhO8qXWAUE2W_dRdb3nIbkDMO5Nnw2V4Tng_MHxJHSJh-Rdz-tWtwCyv4SgORP-K58Q7JVDosDv1C3WNrpHQIYsFiaUJgJGjxsK9oaMiRfYIFZgDPNd4VIlBiInj5SS-9PBfu_xdab52_tF-IJDV_FMeQQ_a6.svg) -->
-
 ### Setup Message
 
 + TYPE_SETUP
@@ -181,9 +172,6 @@ B is {hidden}
 @enduml
 ```
 
-<!-- ![A](docs/assets/plantuml/JOnDJWCn34RtFeNf2Lf-99PfJu340Ieh-MWYF9bHx4WCYBl3a0hOvNqlVi5SclT9wSOp9h19JUPp1LaK1HzOZ1_sl9Gtg56SQom6tZr9V8NpixSUlJVijd_7FtzQ7VOpdeZ2devSZ3CaeT5fU_kwWC9XWA9UF5Eu7HXRf70tRXPPTPOqnDBLSCxl5Ex_3rgcuXGUnvQWifwxVTUllHULouRNv4SkAQ5-3lbB0JNrIRy0.svg) -->
-
-
  | Bit | Flag          | Description                                                                   |
  | --- | ------------- | ----------------------------------------------------------------------------- |
  | 0   | RESET_COUNTER | If set to true (1) the setup command will reset the current Framecounter to 0 |
@@ -216,9 +204,6 @@ B is {hidden}
 @enduml
 ```
 
-<!-- ![A](docs/assets/plantuml/XOj12i8m54Jt_nJVdg1LtASzWU09GZAOO9gM_1-mY7UN6j2bktdpPeoeBLhdH0SDcC5YinTTCaYSJU21hV2vvpK-a8JSabqKS7UnxWxbgvRgj1Pq-sxy-MbJoAUSY4nF8qVX0EjHQDgpRYl830qIyaq3cMD3LnoPK_iyG_GU-TNCbypmnoFxEgSt.svg) -->
-
-
 ### Char Messages
 
 + TYPE_ECHO
@@ -246,5 +231,3 @@ B is "char[]"
 
 @enduml
 ```
-
-<!-- ![A](docs/assets/plantuml/HOin3i8m34LtdyBa12qLUzeJ834Y1iknI4MQLh4ZqTj3oS3cv_UVLwDYTKbmiYYBe58EQciMKAOas2CfNZhSvhSa1LuppohehiGlCRnPgMorY3jsuzzFkud-dXE0xs34MJ4A1Iam7RVjcu3l6oJ9JulWpmsvCFYXDHljQQNGXED8vVvmtt00BpdK9Nq0.svg) -->
