@@ -3,19 +3,21 @@ site_name: JARVIS Mocap -  Documentation
 # Page tree
 nav:
   - "Home": "index.md"
-  - "Getting Started": 
-    - "1. Introduction": "getting_started/1_introduction.md"
-    - "2. Exploring the Example Trainingset": "getting_started/2_exploring_example.md"
-    - "3. Creating a new Trainingset": "getting_started/3_creating_trainingset.md"
+  - "Getting Started":
+      - "1. Introduction": "getting_started/1_introduction.md"
+      - "2. Exploring the Example Trainingset": "getting_started/2_exploring_example.md"
+      - "3. Creating a new Trainingset": "getting_started/3_creating_trainingset.md"
   - "Manual":
-    - "1. Introduction": "manual/1_introduction.md"
-    - "2. Designing a Setup": "manual/2_mocap_setup_design.md"
-    - "3. Setting up the AcquisitionTool": "manual/3_acquisitiontool_setup.md"
-    - "4. Recording Calibration Videos": "manual/4_recording_calibration.md"
-    - "5. Creating and Labeling Datasets": "manual/5_creating_and_labeling_datasts.md"
+      - "1. Introduction": "manual/1_introduction.md"
+      - "2. Designing a Setup": "manual/2_mocap_setup_design.md"
+      - "3. Setting up the AcquisitionTool": "manual/3_acquisitiontool_setup.md"
+      - "4. Recording Calibration Videos": "manual/4_recording_calibration.md"
+      - "5. Creating and Labeling Datasets": "manual/5_creating_and_labeling_datasts.md"
   - "Model Database": "model_database/model_database.md"
   - "Downloads": "downloads/downloads.md"
-
+  - "Developer Documentation":
+      - "1. Introduction": "developer_documentation/1_introduction.md"
+      - "9. Trigger": "developer_documentation/9_trigger.md"
 
 theme:
   name: material
@@ -30,7 +32,6 @@ theme:
       toggle:
         icon: material/weather-sunny
 
-
         name: Switch to dark mode
   features:
     - content.code.annotate
@@ -38,7 +39,6 @@ theme:
     - navigation.tracking
   logo: assets/images/logo.png
   favicon: assets/images/logo_color.svg
-
 
 extra_css:
   - stylesheets/extra.css
@@ -60,7 +60,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
+  - plantuml_markdown:
+      server: http://www.plantuml.com/plantuml
+      format: svg # default diagram image format
 plugins:
   - glightbox:
   - search:
@@ -74,7 +76,7 @@ extra:
       link: "https://github.com/JARVIS-MoCap"
     - icon: "fontawesome/brands/twitter"
       link: "https://twitter.com/hueser_timo"
-  analytics: 
+  analytics:
     feedback:
       title: Was this page helpful?
       ratings:
@@ -86,12 +88,11 @@ extra:
         - icon: material/emoticon-sad-outline
           name: This page could be improved
           data: 0
-          note: >- 
+          note: >-
 
 
             Thanks for your feedback! Help us improve this page by
             using our <a href="..." target=_blank>feedback form</a>.
-
 
 # Copyright
 copyright: "&copy; 2022 Timo Hüser"
