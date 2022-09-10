@@ -1,6 +1,6 @@
-# Trigger
+# TriggerFirmware
 
-## Installation using PlatformIO
+## Development using PlatformIO
 
 ### PlatformIO
 
@@ -10,7 +10,7 @@ PlatformIO is an software ecosystem that greatly simplifies the programming of m
 
 We recommend using one of the options below to flash your microcontroller:
 
-##### Visual Studio Code (VSCode).
+##### Visual Studio Code (VSCode)
 
 Installation Guide:
 See: https://platformio.org/platformio-ide
@@ -61,17 +61,19 @@ platformio run -t upload -e <YOUR_MCU_ENVIRONMENT>
 
 ## Wireing Guide
 The default behavior for all microcontrollers with enough pins is that pins 0-15 are available as trigger outputs for your cameras and pins 16-23 are pullup enabled input pins for the timed logging feature of the Acquisition software. If your microcontroller does not have the required number of pins, or does not have support for functionality such as digital interrupt on all input pins, you should look at the respective header files in the ```boards/``` folder.
-## Trigger protocoll
+## Trigger protocol
+
+The protocol is build for two use cases in mind. The first one is to to give the microcontroller commands, mainly the command to start and stop the triggers that we use for Acquisition. Like shown below:
 
 ```plantuml
 @startuml
 !theme sandstone
 "Recording PC" -> MCU: setup (Frames)
 "Recording PC" <-- MCU: ack
-"Recording PC" <-- MCU: Inputs
-"Recording PC" -> MCU: ack
 @enduml
 ```
+
+The ability of the microcontroller to also read inputs and notify the acquisition software is the second use case. For this purpose, the microcontroller sends a message at every COM-loop, if a change has occurred.
 
 ```plantuml
 @startuml
@@ -81,7 +83,11 @@ The default behavior for all microcontrollers with enough pins is that pins 0-15
 @enduml
 ```
 
-Waring: ACKs are not yet handled by the MCU
+!!! warning
+
+    ACKs are not yet handled by the MCU.
+    
+    Retransmissions are still being investigated.
 
 ### Message encoding
 
