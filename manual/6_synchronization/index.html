@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../assets/images/logo_color.svg" rel="icon"/>
 <meta content="mkdocs-1.3.1, mkdocs-material-8.4.3" name="generator"/>
-<title>1. Introduction - JARVIS Mocap -  Documentation</title>
+<title>6. How to synchronize your devices - JARVIS Mocap -  Documentation</title>
 <link href="../../assets/stylesheets/main.6b80c2a2.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#developer-documentation">
+<a class="md-skip" href="#how-to-synchronize-your-devices">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              1. Introduction
+              6. How to synchronize your devices
             
           </span>
 </div>
@@ -163,8 +163,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           Manual
           <span class="md-nav__icon md-icon"></span>
@@ -176,32 +176,33 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../manual/1_introduction/">
+<a class="md-nav__link" href="../1_introduction/">
         1. Introduction
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../manual/2_mocap_setup_design/">
+<a class="md-nav__link" href="../2_mocap_setup_design/">
         2. Designing a Setup
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../manual/3_acquisitiontool_setup/">
+<a class="md-nav__link" href="../3_acquisitiontool_setup/">
         3. Setting up the AcquisitionTool
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../manual/4_recording_calibration/">
+<a class="md-nav__link" href="../4_recording_calibration/">
         4. Recording Calibration Videos
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../manual/5_creating_and_labeling_datasts/">
+<a class="md-nav__link" href="../5_creating_and_labeling_datasts/">
         5. Creating and Labeling Datasets
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../manual/6_synchronization/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
         6. How to synchronize your devices
       </a>
 </li>
@@ -218,8 +219,8 @@
         Downloads
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6">
           Developer Documentation
           <span class="md-nav__icon md-icon"></span>
@@ -230,14 +231,13 @@
           Developer Documentation
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../developer_documentation/1_introduction/">
         1. Introduction
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../9_trigger/">
+<a class="md-nav__link" href="../../developer_documentation/9_trigger/">
         9. Trigger
       </a>
 </li>
@@ -259,7 +259,41 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="developer-documentation">Developer Documentation</h1>
+<h1 id="how-to-synchronize-your-devices">How to synchronize your devices</h1>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>                           ┌─────┐     ┌─────┐     ┌─       ─┐
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>         ...               │     │     │     │     │   ...   │ ...
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>              ─────────────┘     └─────┘     └─────┘         └───────────
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>wavestate           0      │  1  │  0  │  1  │  0  │ 1     n │     0
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>pulse_count     UINT32_MAX │  0  │  0  │  1  │  1  │ 2     n │ UINT32_MAX
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>pulse_count (cont.) n      │ n+1 │ n+1 │ n+2 │ n+2 │n+3   n+m│    n+m
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>sync_rising_edge == true   ┴     │     ┴     │     ┴         │
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>sync_rising_edge == false        ┴           ┴               ┴
+</code></pre></div>
+<!-- ```plantuml
+@startuml
+clock   "Wave"   as C0 with period 10
+binary  "Binary"  as B
+concise "Concise" as C
+robust  "Robust"  as R
+analog  "Analog"  as A
+
+
+@0
+C is Idle
+R is Idle
+A is 0
+
+@5
+B is high
+C is Waiting
+R is Processing
+A is 3
+
+@10
+R is Waiting
+A is 1
+@enduml
+``` -->
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">
@@ -305,7 +339,7 @@ Thanks for your feedback! Help us improve this page by using our <a href="..." t
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Downloads" class="md-footer__link md-footer__link--prev" href="../../downloads/downloads/" rel="prev">
+<a aria-label="Previous: 5. Creating and Labeling Datasets" class="md-footer__link md-footer__link--prev" href="../5_creating_and_labeling_datasts/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -314,17 +348,17 @@ Thanks for your feedback! Help us improve this page by using our <a href="..." t
 <span class="md-footer__direction">
                 Previous
               </span>
-              Downloads
+              5. Creating and Labeling Datasets
             </div>
 </div>
 </a>
-<a aria-label="Next: 9. Trigger" class="md-footer__link md-footer__link--next" href="../9_trigger/" rel="next">
+<a aria-label="Next: Model Database" class="md-footer__link md-footer__link--next" href="../../model_database/model_database/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              9. Trigger
+              Model Database
             </div>
 </div>
 <div class="md-footer__button md-icon">
