@@ -13,11 +13,11 @@ nav:
       - "3. Setting up the AcquisitionTool": "manual/3_acquisitiontool_setup.md"
       - "4. Recording Calibration Videos": "manual/4_recording_calibration.md"
       - "5. Creating and Labeling Datasets": "manual/5_creating_and_labeling_datasts.md"
+      - "6. How to synchronize your devices": "manual/6_synchronization.md"
   - "Model Database": "model_database/model_database.md"
   - "Downloads": "downloads/downloads.md"
   - "Developer Documentation":
       - "1. Introduction": "developer_documentation/1_introduction.md"
-      - "6. How to synchronize your devices": "manual/6_synchronization.md"
       - "9. Trigger": "developer_documentation/9_trigger.md"
 
 theme:
