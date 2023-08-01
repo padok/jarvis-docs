@@ -1,10 +1,10 @@
 
 # How to synchronize your devices
 
-If you use our external trigger, you can use it's inputs, to synchronize your devices.
+If you use our external trigger, you can use its inputs, to synchronize your devices.
 Most of the supported microcontroller boards log the inputs at pins 16-23 into a <recording_path>/triggerdata.csv file.
 
-For time synchronization, the microcontroller boards logs the first inputs at the time the first pulse was sent. This way you can synchronize the first images of the cameras and their internal clock to the internal clock of the external trigger.
+For time synchronization, the microcontroller boards log the first inputs at the time the first pulse was sent. This way you can synchronize the first images of the cameras and their internal clock to the internal clock of the external trigger.
 
 ```text
                            ┌─────┐     ┌─────┐     ┌─       ─┐

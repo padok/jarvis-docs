@@ -4,7 +4,7 @@
 
 ### PlatformIO
 
-PlatformIO is an software ecosystem that greatly simplifies the programming of microcontrollers. It is available as a plugin for many programming environments and can also be run directly from the command line.
+PlatformIO is a software ecosystem that greatly simplifies the programming of microcontrollers. It is available as a plugin for many programming environments and can also be run directly from the command line.
 
 #### Installing PlatformIO
 
@@ -59,11 +59,11 @@ platformio run -t upload -e <YOUR_MCU_ENVIRONMENT>
 ```
 
 ## Wireing Guide
-The default behavior for all microcontrollers with enough pins is that pins 0-15 are available as trigger outputs for your cameras and pins 16-23 are pullup enabled input pins for the timed logging feature of the Acquisition software. If your microcontroller does not have the required number of pins, or does not have support for functionality such as digital interrupt on all input pins, you should look at the respective header files in the ```boards/``` folder.
+The default behavior for all microcontrollers with enough pins is that pins 0-15 are available as trigger outputs for your cameras and pins 16-23 are pull-up enabled input pins for the timed logging feature of the Acquisition software. If your microcontroller does not have the required number of pins, or does not have support for functionality such as digital interrupt on all input pins, you should look at the respective header files in the ```boards/``` folder.
 
 ## Trigger protocol
 
-The protocol is build for two use cases in mind. The first one is to to give the microcontroller commands, mainly the command to start and stop the triggers that we use for Acquisition. Like shown below:
+The protocol is build for two use cases in mind. The first one is to give the microcontroller commands, mainly the command to start and stop the triggering of the Acquisition. Like shown below:
 
 ```plantuml width="400px"
 @startuml
@@ -189,10 +189,10 @@ B is {hidden}
 @enduml
 ```
 
- | Bit | Flag          | Description                                                                   |
- | --- | ------------- | ----------------------------------------------------------------------------- |
- | 0   | RESET_COUNTER | If set to true (1) the setup command will reset the current Framecounter to 0 |
- | 1-7 | RESERVED      | Reserved flag for later functionality                                         |
+ | Bit | Flag          | Description                                                                    |
+ | --- | ------------- | ------------------------------------------------------------------------------ |
+ | 0   | RESET_COUNTER | If set to true (1) the setup command will reset the current Frame counter to 0 |
+ | 1-7 | RESERVED      | Reserved flag for later functionality                                          |
 
 ### Type-Only Messages
 
